@@ -1,6 +1,7 @@
 const router = require('express').Router();
 const User = require('./user.model');
 const usersService = require('./user.service');
+const { getStatus } = require('../../utils/router.helpers')
 
 router.route('/').get(async (req, res) => {
   const users = await usersService.getAll();
@@ -13,7 +14,16 @@ router
   .get('/:id', async (req, res) => {
     const { id } = req.params;
     const user = await usersService.getUser(id);
-    res.json(User.toResponse(user));
+    res.status(getStatus(user, 200, 404)).json(user)
+  })
+  .post('/', async (req, res) => {
+    const user = await usersService.addUser(req.body)
+    res.status(getStatus(user, 201, 404)).json(user)
+  })
+  .put('/:id', async (req, res) => {
+    const { id } = req.params;
+    const user = await usersService.updateUser(id, req.body)
+    res.status(getStatus(user, 200, 404)).json(user)
   })
 
 module.exports = router;

@@ -1,3 +1,6 @@
+// const { use } = require("chai");
+const User = require("./user.model");
+
 // const {db} = require('../db/db')
 const users = [];
 const bords = [];
@@ -29,10 +32,25 @@ const getAll = async () =>
 ;
  
 const getUser = async(id) => {
-  // console.log(id)
-  const user = await db[0].find(item => item.id === id);
-  return user;
+  let user = await db[0].find(item => item.id === id);
+    user = user ?  User.toResponse(user) : 'Error: no user with such id';
+    return user;
   }
 
-module.exports = { getAll, getUser };
+const addUser = async(data) => {
+  const user = new User(data);
+  db[0].push(user);
+  return user ?  User.toResponse(user) : 'Error: error while adding new user';
+}
+
+const updateUser = async(id, data) => {
+  const user = await db[0].find(item => item.id === id);
+  const index = await db[0].findIndex(item => item.id === id);
+  const newUser = new User(data);
+  newUser.id = id;
+  db[0].splice(index, 1, newUser);
+  return (user && newUser && index !== -1) ? User.toResponse(newUser) : 'Error: error while updeting user';
+}
+
+module.exports = { getAll, getUser, addUser, updateUser };
 
