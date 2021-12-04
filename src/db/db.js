@@ -1,10 +1,10 @@
 const users = [];
-const bords = [];
+const boards = [];
 const tasks = [];
 
 const db = [
     users, 
-  bords,
+    boards,
   tasks
 ]
 

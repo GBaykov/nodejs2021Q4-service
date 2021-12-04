@@ -2,15 +2,6 @@
 const User = require("./user.model");
 const {db} = require('../../db/db')
 
-// const users = [];
-// const bords = [];
-// const tasks = [];
-
-// const db = [
-//     users, 
-//   bords,
-//   tasks
-// ]
 
 const getAll = async () => 
   // TODO: mock implementation. should be replaced during task development
