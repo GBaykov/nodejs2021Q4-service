@@ -52,5 +52,11 @@ const updateUser = async(id, data) => {
   return (user && newUser && index !== -1) ? User.toResponse(newUser) : 'Error: error while updeting user';
 }
 
-module.exports = { getAll, getUser, addUser, updateUser };
+const deleteUser = async(id) => {
+  const index = await db[0].findIndex(item => item.id === id);
+  db[0].splice(index, 1);
+  return (index !== -1) ? 202 : 'Error: error while deleting user';
+}
+
+module.exports = { getAll, getUser, addUser, updateUser, deleteUser };
 

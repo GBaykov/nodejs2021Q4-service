@@ -25,5 +25,10 @@ router
     const user = await usersService.updateUser(id, req.body)
     res.status(getStatus(user, 200, 404)).json(user)
   })
+  .delete('/:id', async (req, res) => {
+    const { id } = req.params;
+    const result = await usersService.deleteUser(id)
+    res.status(getStatus(result, 204, 404)).json(result)
+  })
 
 module.exports = router;
