@@ -31,6 +31,18 @@ const updateUser = async(id, data) => {
 const deleteUser = async(id) => {
   const index = await db[0].findIndex(item => item.id === id);
   db[0].splice(index, 1);
+  // for(let i = 0; i<db[2].length; i+=1) {
+  //   if(db[2].userId === id){
+  //     db[2].userId = null
+  //   }
+  // }
+  db[2].map((item) => {
+    if(item.userId === id){
+      const it = item;
+      it.userId = null;
+    }
+    return db[2]
+  });
   return (index !== -1) ? 202 : 'Error: error while deleting user';
 }
 

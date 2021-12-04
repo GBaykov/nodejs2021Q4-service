@@ -1,5 +1,6 @@
 const {db} = require('../../db/db');
 const Board = require('./bords.model');
+const taskService = require('../tasks/task.service');
 
 const boardsDB = db[1];
 
@@ -31,6 +32,14 @@ const updateBoard = async(id, data) => {
 const deleteBoard = async(id) => {
   const index = await boardsDB.findIndex(item => item.id === id);
   boardsDB.splice(index, 1);
+
+  db[2].map((task) => {
+if(task.boardId === id) {
+   taskService.deleteTask(id)
+}
+return db[2];
+  })
+
   return (index !== -1) ? 202 : 'Error: error while deleting board';
 }
 
