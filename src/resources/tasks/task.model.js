@@ -1,4 +1,3 @@
-// const uuid = require('uuid');
 const { v4: uuid } = require('uuid');
 
 class Task {
@@ -7,7 +6,7 @@ class Task {
     title,
     order,
     description,
-    userId, // assignee
+    userId, 
     boardId,
     columnId
   } = {}) {

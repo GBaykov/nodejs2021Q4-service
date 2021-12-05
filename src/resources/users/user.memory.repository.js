@@ -1,11 +1,8 @@
-// const { use } = require("chai");
 const User = require("./user.model");
 const {db} = require('../../db/db')
 
 
-const getAll = async () => 
-  // TODO: mock implementation. should be replaced during task development
-   db[0];
+const getAll = async () =>  db[0];
  
 const getUser = async(id) => {
   let user = await db[0].find(item => item.id === id);
@@ -31,11 +28,6 @@ const updateUser = async(id, data) => {
 const deleteUser = async(id) => {
   const index = await db[0].findIndex(item => item.id === id);
   db[0].splice(index, 1);
-  // for(let i = 0; i<db[2].length; i+=1) {
-  //   if(db[2].userId === id){
-  //     db[2].userId = null
-  //   }
-  // }
   db[2].map((item) => {
     if(item.userId === id){
       const it = item;

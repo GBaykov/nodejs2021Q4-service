@@ -4,11 +4,7 @@ const Task = require('./task.model');
 const taskDB = db[2];
 
 const getAll = async (boardId) => {
-  // console.log(boardId);
-
   const tasks = await taskDB.filter(task => task.boardId === boardId);
-  // console.log(taskDB);
-  // console.log(tasks);
   return tasks;
 }
    
@@ -42,4 +38,3 @@ const deleteTask = async(id) => {
 }
 
 module.exports = { getAll, getTask, addTask, updateTask, deleteTask };
-// {"title":"title","order":"order","description":"description","userId":"1797ea1e-f308-4c25-8ece-56292f2065ff","columnId":"columnId"}
