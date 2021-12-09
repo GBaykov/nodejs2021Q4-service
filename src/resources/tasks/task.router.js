@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const taskService = require('./task.service');
-const { getStatus } = require('../../utils/router.helpers')
+const { getStatus } = require('../../utils/router.helpers.ts')
 
 router.route('/:boardId/tasks/').get(async (req, res) => {
   const  {boardId} = req.params;

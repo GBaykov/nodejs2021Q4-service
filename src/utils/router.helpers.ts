@@ -1,5 +1,5 @@
 
-function getStatus(entity, successCode, errCode){
+function getStatus(entity:string | number, successCode:number, errCode:number):number{
     if(typeof entity !== "string") {
         return successCode
      } return errCode;

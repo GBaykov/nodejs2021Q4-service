@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const boardsService = require('./bords.service');
-const { getStatus } = require('../../utils/router.helpers')
+const { getStatus } = require('../../utils/router.helpers.ts')
 
 router.route('/').get(async (req, res) => {
   const boards = await boardsService.getAll();
@@ -25,7 +25,7 @@ router
   })
   .delete('/:id', async (req, res) => {
     const { id } = req.params;
-    const result = await boardsService.deleteBoard(id)
+    const result =  boardsService.deleteBoard(id)
     res.status(getStatus(result, 204, 404)).json(result)
   })
 

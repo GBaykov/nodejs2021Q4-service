@@ -1,4 +1,5 @@
-const {db} = require('../../db/db');
+const {db} = require( '../../db/db');
+
 const Board = require('./bords.model');
 const taskService = require('../tasks/task.service');
 

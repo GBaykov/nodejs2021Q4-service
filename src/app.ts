@@ -1,17 +1,23 @@
+// Define "require"
+
 
 import {Request,Response,Application, NextFunction, Express} from 'express';
 
+import YAML = require("yamljs")
+import {SwaggerUiOptions} from 'swagger-ui-express'
+import path from 'path';
+
 const swaggerUI = require('swagger-ui-express');
-const path = require('path');
-const YAML = require('yamljs');
+// const YAML = require('yamljs');
 const express = require ('express')
 const userRouter = require('./resources/users/user.router');
 const bordsRouter = require('./resources/bords/bords.router');
 const tasksRouter = require('./resources/tasks/task.router');
 
 
+
  const app:Application  = express();
-const swaggerDocument = YAML.load(path.join(__dirname, '../doc/api.yaml'));
+const swaggerDocument:SwaggerUiOptions = YAML.load(path.join(__dirname, '../doc/api.yaml'));
 
 app.use(express.json());
 

@@ -1,7 +1,7 @@
 const router = require('express').Router();
 const User = require('./user.model');
 const usersService = require('./user.service');
-const { getStatus } = require('../../utils/router.helpers')
+const { getStatus } = require('../../utils/router.helpers.ts')
 
 router.route('/').get(async (req, res) => {
   const users = await usersService.getAll();
