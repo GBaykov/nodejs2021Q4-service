@@ -1,9 +1,8 @@
+import { IUser } from "../types";
 
-function getStatus(entity:string | number, successCode:number, errCode:number):number{
+export default function getStatus(entity:string | number | IUser, successCode:number, errCode:number):number{
     if(typeof entity !== "string") {
         return successCode
      } return errCode;
 }
 
-
-module.exports = { getStatus }

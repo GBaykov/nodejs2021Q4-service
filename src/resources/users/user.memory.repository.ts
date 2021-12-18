@@ -1,22 +1,24 @@
-const User = require("./user.model");
-const {db} = require('../../db/db')
+import User from "./user.model";
+import db from '../../db/db';
+import {IUser} from '../../types';
 
-
-const getAll = async () =>  db[0];
+export const getAll = async () =>  db[0];
  
-const getUser = async(id) => {
-  let user = await db[0].find(item => item.id === id);
-    user = user ?  User.toResponse(user) : 'Error: no user with such id';
-    return user;
+export const getUser = async(id:string):Promise<string | IUser>  => {    /// ///////!!!!!!!!!!!!!??????????
+  const user = await db[0].find(item => item.id === id);
+  const result:IUser | string = user ?  User.toResponse(user) : 'Error: no user with such id';
+  // return user;
+    // user = user ?  User.toResponse(user) : 'Error: no user with such id';
+    return result;
   }
 
-const addUser = async(data) => {
+  export const addUser = async(data:IUser) => {
   const user = new User(data);
   db[0].push(user);
   return user ?  User.toResponse(user) : 'Error: error while adding new user';
 }
 
-const updateUser = async(id, data) => {
+export const updateUser = async(id:string, data:IUser) => {
   const user = await db[0].find(item => item.id === id);
   const index = await db[0].findIndex(item => item.id === id);
   const newUser = new User(data);
@@ -25,7 +27,7 @@ const updateUser = async(id, data) => {
   return (user && newUser && index !== -1) ? User.toResponse(newUser) : 'Error: error while updeting user';
 }
 
-const deleteUser = async(id) => {
+export const deleteUser = async(id:string) => {
   const index = await db[0].findIndex(item => item.id === id);
   db[0].splice(index, 1);
   db[2].map((item) => {
@@ -38,5 +40,5 @@ const deleteUser = async(id) => {
   return (index !== -1) ? 202 : 'Error: error while deleting user';
 }
 
-module.exports = { getAll, getUser, addUser, updateUser, deleteUser };
+// module.exports = { getAll, getUser, addUser, updateUser, deleteUser };
 

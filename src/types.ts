@@ -1,24 +1,24 @@
 
 
- export interface User  {
+ export interface IUser  {
     id: string;
     name: string;
     login: string;
     password?: string;
   }
 
-  export interface Column {
+  export interface IColumn {
     id: string;
     title: string;
     order: number;
   }
-  export interface Board {
+  export interface IBoard {
     id: string;
     title: string;
-    columns: Column[] | null;
+    columns: IColumn[] | null;
   }
   
-  export interface Task {
+  export interface ITask {
     id: string;
     title: string;
     order: number;
@@ -29,8 +29,8 @@
   }
   
   export type DB =[
-      users: User[],
-  boards: Board[],
-  tasks: Task[]]
+      users: IUser[],
+  boards: IBoard[],
+  tasks: ITask[]]
     
   

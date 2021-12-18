@@ -1,17 +1,17 @@
-import { User ,DB,Board,Task} from '../types';
+import { IUser ,DB,IBoard,ITask} from '../types';
 
-const users:User[] = [{id: 'string',
+const users:IUser[] = [{id: 'string',
 name: 'string',
 login: 'string',
 password: 'string'}];
 
-const boards:Array<Board>= [
+const boards:Array<IBoard>= [
   {id: 'string',
 title: 'string',
 columns: null,
 }];
 
-const tasks:Array<Task> = [
+const tasks:Array<ITask> = [
   {id: 'string',
 title: 'string',
 order:1,
@@ -27,4 +27,4 @@ columnId: 'string',}];
   tasks
  ]
 
-    module.exports =  {db} 
+    export default db 

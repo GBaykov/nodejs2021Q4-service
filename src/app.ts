@@ -3,11 +3,11 @@
 
 import {Request,Response,Application, NextFunction, Express} from 'express';
 
+
 import YAML = require("yamljs")
-import {SwaggerUiOptions} from 'swagger-ui-express'
+import swaggerUI, {SwaggerUiOptions} from 'swagger-ui-express'
 import path from 'path';
 
-const swaggerUI = require('swagger-ui-express');
 // const YAML = require('yamljs');
 const express = require ('express')
 const userRouter = require('./resources/users/user.router');
