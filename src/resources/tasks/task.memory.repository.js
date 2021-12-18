@@ -1,4 +1,5 @@
-const {db} = require('../../db/db');
+import db from '../../db/db';
+
 const Task = require('./task.model');
 
 const taskDB = db[2];
