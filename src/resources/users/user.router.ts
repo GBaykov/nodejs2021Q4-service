@@ -1,5 +1,5 @@
 
-import express, {Router, Request, Response, NextFunction} from 'express';
+import express, {Router, Request, Response} from 'express';
 import * as bodyParser from 'body-parser';
 import User from './user.model';
 import * as usersService from './user.service';

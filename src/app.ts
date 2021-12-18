@@ -9,10 +9,11 @@ import swaggerUI, {SwaggerUiOptions} from 'swagger-ui-express'
 import path from 'path';
 
 // const YAML = require('yamljs');
-//const express = require ('express')
+// const express = require ('express')
 import userRouter from './resources/users/user.router';
+
 const bordsRouter = require('./resources/bords/bords.router');
-const tasksRouter = require('./resources/tasks/task.router');
+import tasksRouter from './resources/tasks/task.router';
 
 
 
