@@ -40,7 +40,7 @@ export const updateUser = (id: string, data: IUser):Promise<{
 /**
  * Delete the User in repository
  * @param id - id of the user to be deleted.
- * @returns OK status code (202) or error message (Promise)
+ * @returns status code (202) or error message (Promise)
  */
 export const deleteUser = (id:string) => usersRepo.deleteUser(id);
 

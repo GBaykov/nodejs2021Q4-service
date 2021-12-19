@@ -49,7 +49,7 @@ export const updateUser = async(id:string, data:IUser) => {
 /**
  * Delete the User in repository
  * @param id - id of the user to be deleted.
- * @returns OK status code (202) or error message (Promise)
+ * @returns status code (202) or error message (Promise)
  */
 export const deleteUser = async(id:string) => {
   const index = await db[0].findIndex(item => item.id === id);
