@@ -20,7 +20,7 @@ export const getUser = async(id:string):Promise<string | IUser>  => {
     return result;
   }
 
-  /**
+/**
  * Adds the User to repository
  * @param data - user to be added.
  * @returns added user or error message (Promise)

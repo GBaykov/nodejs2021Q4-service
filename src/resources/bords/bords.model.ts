@@ -19,6 +19,11 @@ class Board implements IBoard{
     this.columns = columns;
   }
 
+  /**
+   * create Column
+   * @param columns - columns params for creacing new Column
+   * @returns newly created Column
+   */
   static createColumns(columns:IColumn) {
     if (Array.isArray(columns)) {
       return columns.map((col) => new Column({ ...col }));
