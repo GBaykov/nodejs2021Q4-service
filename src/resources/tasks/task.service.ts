@@ -7,4 +7,4 @@ export const addTask = (data: ITask, boardId: string) => tasksRepo.addTask(data,
 export const updateTask = (id: string, data: ITask, boardId: string) => tasksRepo.updateTask(id, data, boardId);
 export const deleteTask = (id: string) => tasksRepo.deleteTask(id);
 
-//module.exports = { getAll, getTask, addTask, updateTask, deleteTask };
+// module.exports = { getAll, getTask, addTask, updateTask, deleteTask };

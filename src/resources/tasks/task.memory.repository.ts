@@ -17,7 +17,7 @@ export const getTask = async(id:string, boardId:string) => {
   }
 
   export const addTask = async(data:ITask, boardId:string ) => {
-  const task = new Task(data ); //const task = new Task(data, boardId );
+  const task = new Task(data ); // const task = new Task(data, boardId );
   task.boardId = boardId;
   taskDB.push(task);
   return task || 'Error: error while adding new board';
@@ -39,4 +39,4 @@ export const deleteTask = async(id:string) => {
   return (index !== -1) ? 202 : 'Error: error while deleting task';
 }
 
-//module.exports = { getAll, getTask, addTask, updateTask, deleteTask };
+// module.exports = { getAll, getTask, addTask, updateTask, deleteTask };

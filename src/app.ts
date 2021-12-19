@@ -11,9 +11,9 @@ import path from 'path';
 // const YAML = require('yamljs');
 // const express = require ('express')
 import userRouter from './resources/users/user.router';
-
-const bordsRouter = require('./resources/bords/bords.router');
 import tasksRouter from './resources/tasks/task.router';
+
+import bordsRouter from './resources/bords/bords.router';
 
 
 
@@ -31,6 +31,7 @@ app.use('/', (req:Request, res:Response, next:NextFunction) => {
   }
   next();
 });
+
 
 app.use('/users', userRouter);
 app.use('/boards', bordsRouter);

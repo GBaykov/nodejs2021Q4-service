@@ -1,27 +1,27 @@
-const {db} = require( '../../db/db');
+import db from '../../db/db';
 
-const Board = require('./bords.model');
-const taskService = require('../tasks/task.service');
+import Board from './bords.model';
+import * as taskService from '../tasks/task.service';
+import { IBoard } from '../../types';
 
 const boardsDB = db[1];
 
-const getAll = async () => boardsDB;
-  // TODO: mock implementation. should be replaced during task development
+export const getAll = async () => boardsDB;
    
  
-const getBoard = async(id) => {
+export const getBoard = async(id:string) => {
   const board = await boardsDB.find(item => item.id === id);
     return board || 'Error: no board with such id';
   }
 
-const addBoard = async(data) => {
+export const addBoard = async(data:IBoard) => {
     if(!data.columns || !data.title) return 'Error: error while adding new board'
   const board = new Board(data);
   boardsDB.push(board);
   return board || 'Error: error while adding new board';
 }
 
-const updateBoard = async(id, data) => {
+export const updateBoard = async(id:string, data:IBoard) => {
   const board = await boardsDB.find(item => item.id === id);
   const index = await boardsDB.findIndex(item => item.id === id);
   const newBoard = new Board(data);
@@ -30,7 +30,7 @@ const updateBoard = async(id, data) => {
   return (board && newBoard && index !== -1) ? newBoard : 'Error: error while updeting board';
 }
 
-const deleteBoard = async(id) => {
+export const deleteBoard = async(id:string) => {
   const index = await boardsDB.findIndex(item => item.id === id);
   boardsDB.splice(index, 1);
 
@@ -44,4 +44,4 @@ return db[2];
   return (index !== -1) ? 202 : 'Error: error while deleting board';
 }
 
-module.exports = { getAll, getBoard, addBoard, updateBoard, deleteBoard };
+// module.exports = { getAll, getBoard, addBoard, updateBoard, deleteBoard };
