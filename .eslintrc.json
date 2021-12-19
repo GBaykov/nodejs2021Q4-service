@@ -37,7 +37,7 @@
   ],
   "rules": {
    
-    "@typescript-eslint/no-explicit-any": ["error"],
+    "@typescript-eslint/no-explicit-any": 2,
     "@typescript-eslint/no-var-requires": 0,
     "import/extensions": "off",
     "linebreak-style": "off",

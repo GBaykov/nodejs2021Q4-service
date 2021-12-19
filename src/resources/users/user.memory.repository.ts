@@ -2,13 +2,16 @@ import User from "./user.model";
 import db from '../../db/db';
 import {IUser} from '../../types';
 
+
+/**
+ * Returns all Users in the repo (Promise)
+ * @returns All Users (Promise)
+ */
 export const getAll = async () =>  db[0];
  
-export const getUser = async(id:string):Promise<string | IUser>  => {    /// ///////!!!!!!!!!!!!!??????????
+export const getUser = async(id:string):Promise<string | IUser>  => { 
   const user = await db[0].find(item => item.id === id);
   const result:IUser | string = user ?  User.toResponse(user) : 'Error: no user with such id';
-  // return user;
-    // user = user ?  User.toResponse(user) : 'Error: no user with such id';
     return result;
   }
 
@@ -40,5 +43,4 @@ export const deleteUser = async(id:string) => {
   return (index !== -1) ? 202 : 'Error: error while deleting user';
 }
 
-// module.exports = { getAll, getUser, addUser, updateUser, deleteUser };
 

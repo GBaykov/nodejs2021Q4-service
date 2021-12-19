@@ -1,7 +1,6 @@
 import {v4 as uuid} from 'uuid'
 import { IUser } from '../../types';
 
-// const { v4: uuid } = require('uuid');
 
 class User implements IUser{
   

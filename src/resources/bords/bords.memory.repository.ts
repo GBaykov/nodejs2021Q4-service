@@ -1,5 +1,4 @@
 import db from '../../db/db';
-
 import Board from './bords.model';
 import * as taskService from '../tasks/task.service';
 import { IBoard } from '../../types';
@@ -43,5 +42,3 @@ return db[2];
 
   return (index !== -1) ? 202 : 'Error: error while deleting board';
 }
-
-// module.exports = { getAll, getBoard, addBoard, updateBoard, deleteBoard };

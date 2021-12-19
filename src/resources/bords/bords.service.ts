@@ -7,4 +7,3 @@ export const addBoard = (data:IBoard) => boardsRepo.addBoard(data);
 export const updateBoard = (id: string, data: IBoard) => boardsRepo.updateBoard(id, data);
 export const deleteBoard = (id: string) => boardsRepo.deleteBoard(id);
 
-// module.exports = { getAll, getBoard, addBoard, updateBoard, deleteBoard };

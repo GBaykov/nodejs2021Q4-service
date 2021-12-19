@@ -1,4 +1,3 @@
-// const router = require('express').Router();
 import express, {Router, Request, Response} from 'express';
 import * as boardsService from './bords.service';
 import getStatus from '../../utils/router.helpers';

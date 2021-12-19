@@ -1,5 +1,3 @@
-// Define "require"
-
 
 import express,{Request,Response,Application, NextFunction, Express} from 'express';
 
@@ -8,8 +6,7 @@ import YAML = require("yamljs")
 import swaggerUI, {SwaggerUiOptions} from 'swagger-ui-express'
 import path from 'path';
 
-// const YAML = require('yamljs');
-// const express = require ('express')
+
 import userRouter from './resources/users/user.router';
 import tasksRouter from './resources/tasks/task.router';
 
