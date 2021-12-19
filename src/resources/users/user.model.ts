@@ -23,7 +23,11 @@ class User implements IUser{
     this.login = login;
     this.password = password;
   }
-
+/**
+ * Return User without password for response
+ * @param user - User with params to be modified for Respons
+ * @returns User without password
+ */
   static toResponse(user:IUser) {
     const { id, name, login } = user;
     return { id, name, login };

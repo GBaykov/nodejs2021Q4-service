@@ -1,4 +1,3 @@
-
 import express, {Router, Request, Response} from 'express';
 import * as bodyParser from 'body-parser';
 import User from './user.model';
