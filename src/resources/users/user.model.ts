@@ -23,6 +23,7 @@ class User implements IUser{
     this.login = login;
     this.password = password;
   }
+
 /**
  * Return User without password for response
  * @param user - User with params to be modified for Respons
