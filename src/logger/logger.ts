@@ -31,14 +31,14 @@ import {createLogger, format, transports} from 'winston';
   }
 
 export const logger = createLogger({
-    level: 'info',
-    format: format.combine(
-        format.uncolorize(),
-        format.json()
-    ),
+    // level: 'info',
+    // format: format.combine(
+    //     format.uncolorize(),
+    //     format.json()
+    // ),
 
     transports: [
-        new transports.Console(),
+        // new transports.Console(),
         new transports.File({
           filename: 'combined.log',
           level: 'info',
@@ -59,13 +59,14 @@ export const logger = createLogger({
     //exitOnError: false, // do not exit on handled exceptions
   })
   
-  logger.log('info', "message")
+  //logger.log('info', "message")
 
 export function logging(req:Request, res:Response, next:NextFunction):void{
 let url = req.url;
-const body = req.body;
-const query = req.query;
+const body = JSON.stringify(req.body);
+const query:string = url.split('?')[1] || '';
 const statusCode = res.statusCode;
+//const status = res.status;
 const message = `[log] -:- url:${url} - body:${body} - query:${query} - statusCode: ${statusCode}`;
 logger.log('info', message);
 //next()

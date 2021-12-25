@@ -1,7 +1,4 @@
-
 import express,{Request,Response,Application, NextFunction, Express} from 'express';
-
-
 import YAML = require("yamljs")
 import swaggerUI, {SwaggerUiOptions} from 'swagger-ui-express'
 import path from 'path';
@@ -9,8 +6,8 @@ import path from 'path';
 
 import userRouter from './resources/users/user.router';
 import tasksRouter from './resources/tasks/task.router';
-
 import bordsRouter from './resources/bords/bords.router';
+import {logger, logging} from './logger/logger';
 
 
 
@@ -28,13 +25,14 @@ app.use('/', (req:Request, res:Response, next:NextFunction) => {
   }
   next();
 });
-import {logger, logging} from './logger/logger';
 
-//logger.info('sdasdf')
+
+
 app.use('/', (req:Request, res:Response, next:NextFunction) => {
   logging(req, res, next);
   next();
 });
+//app.use(logging);
 app.use('/users', userRouter);
 app.use('/boards', bordsRouter);
 app.use('/boards/', tasksRouter);
