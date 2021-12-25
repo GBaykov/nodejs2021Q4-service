@@ -28,8 +28,13 @@ app.use('/', (req:Request, res:Response, next:NextFunction) => {
   }
   next();
 });
+import {logger, logging} from './logger/logger';
 
-
+//logger.info('sdasdf')
+app.use('/', (req:Request, res:Response, next:NextFunction) => {
+  logging(req, res, next);
+  next();
+});
 app.use('/users', userRouter);
 app.use('/boards', bordsRouter);
 app.use('/boards/', tasksRouter);
