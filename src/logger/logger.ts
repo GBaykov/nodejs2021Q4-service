@@ -46,6 +46,14 @@ export const logger = createLogger({
             format.uncolorize(),
             format.json()
         )
+        }),
+        new transports.Console({
+      
+          level: 'error',
+          format: format.combine(
+            format.colorize(),
+            //format.json()
+        )
         })
       ],
   })
@@ -54,10 +62,11 @@ export const logger = createLogger({
 
 export function logging(req:Request, res:Response, next:NextFunction):void{
 let url = req.url;
+const params = JSON.stringify(req.params);
 const body = JSON.stringify(req.body);
-const query:string = url.split('?')[1] || '{}';
+const query:string = JSON.stringify(req.query);
 const statusCode:number = res.statusCode;
 const log:string = "info";
-const message = `[${LOG_LVL} --LEVEL = ${log}] -:- url:${url} - body:${body} - query:${query} - statusCode: ${statusCode}`;
-logger.log('info', message);
+const message = `[LEVEL = ${log}] -:- url:${url} - body:${body} - query:${query} - params:${params} - statusCode: ${statusCode}`;
+logger.log(log, message);
 }

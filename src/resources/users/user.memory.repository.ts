@@ -15,9 +15,11 @@ export const getAll = async () =>  db[0];
  * @returns user or error message (Promise)
  */
 export const getUser = async(id:string):Promise<string | IUser>  => { 
-  const user = await db[0].find(item => item.id === id);
-  const result:IUser | string = user ?  User.toResponse(user) : 'Error: no user with such id';
-    return result;
+  //const user = await db[0].find(item => item.id === id);
+  const user = undefined;
+  if(!user) throw new Error('Error: no user with such id')
+  //const result:IUser | string = user ?  User.toResponse(user) : 'Error: no user with such id';
+    return User.toResponse(user);
   }
 
 /**

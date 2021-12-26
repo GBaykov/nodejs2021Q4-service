@@ -1,26 +1,36 @@
-import express, {Router, Request, Response} from 'express';
+import express, {Router, Request, Response, NextFunction} from 'express';
 import * as bodyParser from 'body-parser';
 import User from './user.model';
 import * as usersService from './user.service';
 import getStatus from '../../utils/router.helpers';
 
 import { IUser } from '../../types';
+//import { NextFunction } from 'express';
 
 
 const router: Router = express.Router();
 router.use(bodyParser.text());
 
-router.route('/').get(async (req:Request, res:Response) => {
-  const users = await usersService.getAll()
-  res.json(users.map(User.toResponse));
+router.route('/').get(async (req:Request, res:Response, next:NextFunction) => {
+  try {
+    const users = await usersService.getAll()
+    res.json(users.map(User.toResponse));
+    //throw new Error("MY OWN ERROR")
+  } catch(err) {
+    next(err)
+  }
 });
 
 
 router
-  .get('/:id', async (req:Request, res:Response) => {
-    const { id } = req.params;
+  .get('/:id', async (req:Request, res:Response, next:NextFunction) => {
+    try{ 
+      const { id } = req.params;
     const user = await usersService.getUser(id);
-    res.status(getStatus(user, 200, 404)).json(user)
+    res.status(getStatus(user, 200, 404)).json(user);
+    }catch(err){
+      next(err)
+    }  
   })
   .post('/', async (req:Request, res: Response) => {
 

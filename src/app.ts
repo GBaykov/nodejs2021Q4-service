@@ -9,6 +9,7 @@ import tasksRouter from './resources/tasks/task.router';
 import bordsRouter from './resources/bords/bords.router';
 import {logger, logging} from './logger/logger';
 import { LOG_LVL } from './common/config';
+import { handleErrors } from './logger/errorHandler';
 
 
 
@@ -37,5 +38,7 @@ app.use('/', (req:Request, res:Response, next:NextFunction) => {
 app.use('/users', userRouter);
 app.use('/boards', bordsRouter);
 app.use('/boards/', tasksRouter);
+app.use(handleErrors)
+
 
 export default app;
