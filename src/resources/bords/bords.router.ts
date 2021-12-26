@@ -19,8 +19,9 @@ router
   .get('/:id', async (req:Request, res:Response, next:NextFunction) => {
     try {
     const { id } = req.params;
-    if(!id) throw new RequestError('ID NOOOOOO',404)
+    
     const board = await boardsService.getBoard(id);
+    if(!id || !board) throw new RequestError(' NOOOOOO ID or BOARD',404)
     res.status(200).json(board)
     }catch(err){
       next(err)
@@ -29,7 +30,8 @@ router
 
   .post('/', async (req:Request, res:Response, next:NextFunction) => {
     try {
-    const board = await boardsService.addBoard(req.body)
+    const board = await boardsService.addBoard(req.body);
+    if( !board) throw new RequestError(' NOOOOOO board ',404)
     res.status(201).json(board)
     }catch(err){
       next(err)
@@ -38,7 +40,8 @@ router
   .put('/:id', async (req:Request, res:Response, next:NextFunction) => {
    try {
     const { id } = req.params;
-    const board = await boardsService.updateBoard(id, req.body)
+    const board = await boardsService.updateBoard(id, req.body);
+    if(!id || !board) throw new RequestError(' NOOOOOO ID or BOARD',404)
     res.status(200).json(board)
    } catch(err){
      next(err)

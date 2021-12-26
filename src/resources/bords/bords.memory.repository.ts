@@ -24,7 +24,7 @@ export const getBoard = async(id:string) => {
   const board = await boardsDB.find(item => item.id === id);
   if(!board) throw new RequestError('Error in getBoard:id is absent or no board with such id', 404);
   
-    return board // || 'Error: no board with such id';
+    return board;
   }
 
   /**
@@ -36,7 +36,7 @@ export const addBoard = async(data:IBoard) => {
     if(!data.columns || !data.title) throw new RequestError('Error in addBoard: data.columns or data.title', 404); 
   const board = new Board(data);
   boardsDB.push(board);
-  return board // || 'Error: error while adding new board';
+  return board;
 }
 
 /**
@@ -54,7 +54,6 @@ export const updateBoard = async(id:string, data:IBoard) => {
   boardsDB.splice(index, 1, newBoard);
   if(!board && !newBoard && index === -1) throw new RequestError('Error: error while updeting board', 404);
   return newBoard;
-  // return (board && newBoard && index !== -1) ? newBoard : 'Error: error while updeting board';
 }
 
 /**
@@ -72,5 +71,5 @@ if(task.boardId === id) {
 }
 return db[2];
   })
-  return 202 // (index !== -1) ?  : 'Error: error while deleting board';
+  return 202
 }

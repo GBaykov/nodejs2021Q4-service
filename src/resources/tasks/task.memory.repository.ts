@@ -51,16 +51,14 @@ export const getTask = async(id:string, boardId:string) => {
  */
 export const updateTask = async(id:string, data:ITask, boardId:string ) => {
   const task = await taskDB.find((item) => item.id === id && item.boardId === boardId);
-  // const task = undefined
   if(!task) throw new RequestError("Error in updateTask: no task with such id or boardId", 404);
   const index = await taskDB.findIndex(item => item.id === id);
   const newTask = new Task(data);
   newTask.id = id;
   newTask.boardId = boardId;
   taskDB.splice(index, 1, newTask);
-  if(task && newTask && index !== -1) return newTask 
-  throw new RequestError("Error: error while updeting task", 404);
-  // return (task && newTask && index !== -1) ? newTask : 'Error: error while updeting task';
+  if(!task && !newTask && index === -1) throw new RequestError("Error: error while updeting task", 404);
+  return newTask;
 }
 
 /**
@@ -73,7 +71,6 @@ export const deleteTask = async(id:string):Promise<number> => {
   if(!index) throw new RequestError("Error in deleteTask: no task with such id", 404);
   taskDB.splice(index, 1);
   return 202
-  
 }
 
 

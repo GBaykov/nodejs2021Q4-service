@@ -25,10 +25,10 @@ export function loggingErrors (err:Error | RequestError, req?:Request) {
         method = req.method;
         body = req.body;
         url = req.url
-        // {method, body, url} = req;
+
     }
     const errorStringForLog = `${name} = 404 - ${message} - ${time} `;
-     const reqStr = undefined// `- method:${method} - body:${JSON.stringify(body)} - url:${url}`;
+     const reqStr = `- method:${method} - body:${JSON.stringify(body)} - url:${url}`;
      if (reqStr) {
         logger.error(errorStringForLog + reqStr)
      } else logger.error(errorStringForLog)
