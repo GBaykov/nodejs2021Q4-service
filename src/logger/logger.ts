@@ -60,12 +60,12 @@ export const logger = createLogger({
   
 
 
-export function logging(req:Request, res:Response, next:NextFunction):void{
+export async function logging  (req:Request, res:Response, next:NextFunction){
 let url = req.url;
 const params = JSON.stringify(req.params);
 const body = JSON.stringify(req.body);
 const query:string = JSON.stringify(req.query);
-const statusCode:number = res.statusCode;
+const statusCode:number = await res.statusCode;
 const log:string = "info";
 const message = `[LEVEL = ${log}] -:- url:${url} - body:${body} - query:${query} - params:${params} - statusCode: ${statusCode}`;
 logger.log(log, message);

@@ -1,2 +1,1 @@
-{"level":"error","message":"ERROR status code = 404 - Error: no user with such id - 26.12.2021, 18:28:09 - GET - [object Object] - /users/c2555e9c-7000-4b1e-b273-7d1a8c20af48"}
-{"level":"error","message":"ERROR status code = 404 - Error: no user with such id - 26.12.2021, 18:28:09 - GET - [object Object] - /users/d8395319-4842-417d-9c22-a59131a8999b"}
+{"level":"error","message":"Request Error = 404 - Error: no user with such id - 26.12.2021, 19:12:30 - method:PUT - body:{\"name\":\"Autotest updated TEST_USER\",\"login\":\"test_user\",\"password\":\"T35t_P@55w0rd\",\"id\":\"50691ecf-af7d-4163-b3da-429ef6babc88\"} - url:/users/50691ecf-af7d-4163-b3da-429ef6babc88"}
