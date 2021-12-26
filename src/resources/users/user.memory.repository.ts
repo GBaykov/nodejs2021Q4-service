@@ -45,16 +45,16 @@ export const getUser = async(id:string):Promise<string | IUser>  => {
  * @returns updated user or error message (Promise)
  */
 export const updateUser = async(id:string, data:IUser) => {
-  //const user = await db[0].find(item => item.id === id);
-  const user = undefined
-  if(!user) throw new RequestError('Error: no user with such id', 404)
+  const user = await db[0].find(item => item.id === id);
+  //const user = undefined
+  if(!user) throw new RequestError('Error in updateUser: no user with such id', 404)
   const index = await db[0].findIndex(item => item.id === id);
   const newUser = new User(data);
   newUser.id = id;
   db[0].splice(index, 1, newUser);
   if(user && newUser && index !== -1) {
     return User.toResponse(newUser) 
-  } else throw new RequestError('Error in updateUser: error while updeting user', 404) ;
+  } else throw new RequestError('Error: error while updeting user', 404);
 }
 
 /**
@@ -75,7 +75,7 @@ export const deleteUser = async(id:string) => {
   });
   if(index !== -1) {
     return 200
-  } else throw new RequestError('Error: error while deleting user', 404) ;
+  } else throw new RequestError('Error: error while deleting user', 404);
   //return (index !== -1) ? 202 : 'Error: error while deleting user';
 }
 

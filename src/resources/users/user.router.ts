@@ -36,7 +36,7 @@ router
   .post('/', async (req:Request, res: Response, next:NextFunction) => {
 try{
     const user: IUser | string = await usersService.addUser(req.body);
-    res.status(getStatus(user, 201, 404)).json(user);
+    res.status(201).json(user);
   }catch(err){
     next(err)
   }  
