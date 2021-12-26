@@ -51,7 +51,7 @@ export const getTask = async(id:string, boardId:string) => {
  */
 export const updateTask = async(id:string, data:ITask, boardId:string ) => {
   const task = await taskDB.find((item) => item.id === id && item.boardId === boardId);
-  //const task = undefined
+  // const task = undefined
   if(!task) throw new RequestError("Error in updateTask: no task with such id or boardId", 404);
   const index = await taskDB.findIndex(item => item.id === id);
   const newTask = new Task(data);
@@ -59,8 +59,8 @@ export const updateTask = async(id:string, data:ITask, boardId:string ) => {
   newTask.boardId = boardId;
   taskDB.splice(index, 1, newTask);
   if(task && newTask && index !== -1) return newTask 
-  else throw new RequestError("Error: error while updeting task", 404);
-  //return (task && newTask && index !== -1) ? newTask : 'Error: error while updeting task';
+  throw new RequestError("Error: error while updeting task", 404);
+  // return (task && newTask && index !== -1) ? newTask : 'Error: error while updeting task';
 }
 
 /**
@@ -68,16 +68,12 @@ export const updateTask = async(id:string, data:ITask, boardId:string ) => {
  * @param id - id of task to be deleting
  * @returns status code (202) or error message (Promise)
  */
-export const deleteTask = async(id:string) => {
+export const deleteTask = async(id:string):Promise<number> => {
   const index = await taskDB.findIndex(item => item.id === id);
-  //const index = undefined
   if(!index) throw new RequestError("Error in deleteTask: no task with such id", 404);
   taskDB.splice(index, 1);
-  const status: number = 202;
-  //if(index === -1) throw new RequestError("Error: error while deleting task", 404)
-  if(index !== -1) return 202  //
-   //throw new RequestError("Error: error while deleting task", 404);
- //
+  return 202
+  
 }
 
 

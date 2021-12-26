@@ -19,7 +19,7 @@ const level:number = process.env.LOG_LVL !== undefined
  
 const config = {
   PORT: process.env.PORT,
-  //LOG_LVL: levels[level],
+  // LOG_LVL: levels[level],
   NODE_ENV: process.env.NODE_ENV,
   MONGO_CONNECTION_STRING: process.env.MONGO_CONNECTION_STRING,
   JWT_SECRET_KEY: process.env.JWT_SECRET_KEY,
@@ -28,4 +28,4 @@ const config = {
 export const LOG_LVL = levels[level]
 
 export const {PORT} = process.env;
-//export const { LOG_LVL}= config;
+// export const { LOG_LVL}= config;

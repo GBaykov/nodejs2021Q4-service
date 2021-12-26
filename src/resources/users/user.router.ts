@@ -5,7 +5,7 @@ import * as usersService from './user.service';
 import getStatus from '../../utils/router.helpers';
 
 import { IUser } from '../../types';
-//import { NextFunction } from 'express';
+// import { NextFunction } from 'express';
 
 
 const router: Router = express.Router();
@@ -15,7 +15,7 @@ router.route('/').get(async (req:Request, res:Response, next:NextFunction) => {
   try {
     const users = await usersService.getAll()
     res.json(users.map(User.toResponse));
-    //throw new Error("MY OWN ERROR")
+    // throw new Error("MY OWN ERROR")
   } catch(err) {
     next(err)
   }

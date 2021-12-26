@@ -9,7 +9,7 @@ import tasksRouter from './resources/tasks/task.router';
 import bordsRouter from './resources/bords/bords.router';
 import {logger, logging} from './logger/logger';
 import { LOG_LVL } from './common/config';
-import { handleErrors } from './logger/errorHandler';
+import { handleErrors, loggingErrors } from './logger/errorHandler';
 
 
 
@@ -34,11 +34,22 @@ app.use('/', (req:Request, res:Response, next:NextFunction) => {
   logging(req, res, next);
   next();
 });
-//app.use(logging);
+
 app.use('/users', userRouter);
 app.use('/boards', bordsRouter);
 app.use('/boards/', tasksRouter);
-app.use(handleErrors)
+app.use(handleErrors);
 
+process.on('uncaughtException', (err) => {
+  loggingErrors(err);
+  setTimeout(() => process.exit(1), 1000);
+});
+// throw Error('Oops!')
 
+process.on('unhandledRejection', (err: Error) => {
+  loggingErrors(err);
+  setTimeout(() => process.exit(1), 1000);
+});
+
+// Promise.reject(Error('Oops!'))
 export default app;

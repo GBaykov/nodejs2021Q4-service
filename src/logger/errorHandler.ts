@@ -3,7 +3,9 @@ import { logger } from './logger';
 
 export class RequestError extends Error {
     public status: number;
+
     public message: string;
+
     constructor( message:string, status:number){ 
         super(message)
         this.name = "Request Error";
@@ -13,12 +15,25 @@ export class RequestError extends Error {
     
 }
 
-function loggingErrors (err:Error | RequestError, req:Request) {
+export function loggingErrors (err:Error | RequestError, req?:Request) {
     const {name, message, stack} = err;
-    const time = (new Date().toLocaleString()).toString()
-    const {method, body, url} = req;
-    const errorStringForLog = `${name} = 404 - ${message} - ${time} - method:${method} - body:${JSON.stringify(body)} - url:${url}`;
-    logger.error(errorStringForLog)
+    const time = (new Date().toLocaleString()).toString();
+    let method;
+    let body;
+    let url;
+    if(req) {
+        method = req.method;
+        body = req.body;
+        url = req.url
+        // {method, body, url} = req;
+    }
+    const errorStringForLog = `${name} = 404 - ${message} - ${time} `;
+     const reqStr = undefined// `- method:${method} - body:${JSON.stringify(body)} - url:${url}`;
+     if (reqStr) {
+        logger.error(errorStringForLog + reqStr)
+     } else logger.error(errorStringForLog)
+    
+    
 }
 export function handleErrors(err:Error, req:Request, res:Response, next:NextFunction) {
     loggingErrors(err, req);

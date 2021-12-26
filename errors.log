@@ -1,1 +1,17 @@
 {"level":"error","message":"Request Error = 404 - Error in getTask: no task with such id or boardId - 26.12.2021, 21:06:24 - method:GET - body:{\"title\":\"title\",\"order\":\"order\",\"description\":\"description\",\"userId\":\"1797ea1e-f308-4c25-8ece-56292f2065ff\",\"columnId\":\"columnId\"} - url:/boards/string/tasks/strin"}
+{"level":"error","message":"Request Error = 404 - Error in getBoard:id is absent or no board with such id - 26.12.2021, 21:23:13 - method:GET - body:{} - url:/boards/361e11b8-e7c3-4f76-8eac-0e5774d3bbc4"}
+{"level":"error","message":"Request Error = 404 - Error in getTask: no task with such id or boardId - 26.12.2021, 21:23:13 - method:GET - body:{} - url:/boards/46f4e491-4e9d-4707-aab8-2aa59493c7ab/tasks/22914e1f-f00e-4dc0-8371-ab7310faf8a9"}
+{"level":"error","message":"Request Error = 404 - Error in getTask: no task with such id or boardId - 26.12.2021, 21:23:13 - method:GET - body:{} - url:/boards/46f4e491-4e9d-4707-aab8-2aa59493c7ab/tasks/e79807e2-ed64-4bd2-ac94-4dd92ff20b03"}
+{"level":"error","message":"Request Error = 404 - Error in getTask: no task with such id or boardId - 26.12.2021, 21:23:13 - method:GET - body:{} - url:/boards/46f4e491-4e9d-4707-aab8-2aa59493c7ab/tasks/f4a56a4b-b0f8-4bfc-8eed-629977b5f80a"}
+{"level":"error","message":"Request Error = 404 - Error in getTask: no task with such id or boardId - 26.12.2021, 21:23:13 - method:GET - body:{} - url:/boards/46f4e491-4e9d-4707-aab8-2aa59493c7ab/tasks/6b629d48-3e48-4614-a6f1-03f6330f5a24"}
+{"level":"error","message":"Request Error = 404 - Error in getTask: no task with such id or boardId - 26.12.2021, 21:23:13 - method:GET - body:{} - url:/boards/46f4e491-4e9d-4707-aab8-2aa59493c7ab/tasks/2cec23c1-0dfe-47c5-b9a1-999884015f9e"}
+{"level":"error","message":"Request Error = 404 - Error in getTask: no task with such id or boardId - 26.12.2021, 21:23:14 - method:GET - body:{} - url:/boards/549571f5-1ec7-4886-a99a-37cfcf819739/tasks/789934c4-7174-4c47-a7a2-cdad307716d7"}
+{"level":"error","message":"Request Error = 404 - Error in getBoard:id is absent or no board with such id - 26.12.2021, 21:23:53 "}
+{"level":"error","message":"Request Error = 404 - Error in getTask: no task with such id or boardId - 26.12.2021, 21:23:53 "}
+{"level":"error","message":"Request Error = 404 - Error in getTask: no task with such id or boardId - 26.12.2021, 21:23:53 "}
+{"level":"error","message":"Request Error = 404 - Error in getTask: no task with such id or boardId - 26.12.2021, 21:23:53 "}
+{"level":"error","message":"Request Error = 404 - Error in getTask: no task with such id or boardId - 26.12.2021, 21:23:53 "}
+{"level":"error","message":"Request Error = 404 - Error in getTask: no task with such id or boardId - 26.12.2021, 21:23:53 "}
+{"level":"error","message":"Request Error = 404 - Error in getTask: no task with such id or boardId - 26.12.2021, 21:23:54 "}
+{"level":"error","message":"Error = 404 - Oops! - 26.12.2021, 21:26:31 "}
+{"level":"error","message":"Error = 404 - Oops! - 26.12.2021, 21:27:25 "}
