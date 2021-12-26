@@ -5,7 +5,8 @@
 // uncaughtException  unhandledRejection 
 import express,{Request,Response,Application, NextFunction, Express} from 'express';
 
-import {createLogger, format, transports} from 'winston';
+import winston, {createLogger, format, transports} from 'winston';
+import { LOG_LVL } from '../common/config';
 
 // var options = {
 //     file: {
@@ -24,24 +25,15 @@ import {createLogger, format, transports} from 'winston';
 //       colorize: true,
 //     },
 //   };
-  const levels = {
-    error: 0,
-    warn: 1,
-    info: 2,
-  }
 
+//onst log:string = LOG_LVL || 'info';
 export const logger = createLogger({
-    // level: 'info',
-    // format: format.combine(
-    //     format.uncolorize(),
-    //     format.json()
-    // ),
-
+    level: LOG_LVL,
+    //levels: winston.config.npm.levels,
     transports: [
-        // new transports.Console(),
         new transports.File({
           filename: 'combined.log',
-          level: 'info',
+          level: LOG_LVL,
           format: format.combine(
               format.uncolorize(),
               format.json()
@@ -56,18 +48,16 @@ export const logger = createLogger({
         )
         })
       ],
-    //exitOnError: false, // do not exit on handled exceptions
   })
   
-  //logger.log('info', "message")
+
 
 export function logging(req:Request, res:Response, next:NextFunction):void{
 let url = req.url;
 const body = JSON.stringify(req.body);
-const query:string = url.split('?')[1] || '';
-const statusCode = res.statusCode;
-//const status = res.status;
-const message = `[log] -:- url:${url} - body:${body} - query:${query} - statusCode: ${statusCode}`;
+const query:string = url.split('?')[1] || '{}';
+const statusCode:number = res.statusCode;
+const log:string = "info";
+const message = `[${LOG_LVL} --LEVEL = ${log}] -:- url:${url} - body:${body} - query:${query} - statusCode: ${statusCode}`;
 logger.log('info', message);
-//next()
 }

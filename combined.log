@@ -1,69 +1,67 @@
-
-{"level":"info","message":"sdasdf"}
-{"level":"info","message":"[log] -:- url:/users - body:{} - query: - statusCode: 200"}
-{"level":"info","message":"[log] -:- url:/users - body:{\"name\":\"TEST_USER\",\"login\":\"test_user\",\"password\":\"T35t_P@55w0rd\"} - query: - statusCode: 200"}
-{"level":"info","message":"[log] -:- url:/users/33802b19-83c5-45b6-a84d-0d97fd42d393 - body:{} - query: - statusCode: 200"}
-{"level":"info","message":"[log] -:- url:/users/33802b19-83c5-45b6-a84d-0d97fd42d393 - body:{} - query: - statusCode: 200"}
-{"level":"info","message":"[log] -:- url:/users - body:{\"name\":\"TEST_USER\",\"login\":\"test_user\",\"password\":\"T35t_P@55w0rd\"} - query: - statusCode: 200"}
-{"level":"info","message":"[log] -:- url:/users/a5caa6f1-bd60-4093-b350-a51b826cb271 - body:{} - query: - statusCode: 200"}
-{"level":"info","message":"[log] -:- url:/users - body:{\"name\":\"TEST_USER\",\"login\":\"test_user\",\"password\":\"T35t_P@55w0rd\"} - query: - statusCode: 200"}
-{"level":"info","message":"[log] -:- url:/users/c796935a-76a5-41bc-b76e-18d4c26cbd9a - body:{\"name\":\"Autotest updated TEST_USER\",\"login\":\"test_user\",\"password\":\"T35t_P@55w0rd\",\"id\":\"c796935a-76a5-41bc-b76e-18d4c26cbd9a\"} - query: - statusCode: 200"}
-{"level":"info","message":"[log] -:- url:/users/c796935a-76a5-41bc-b76e-18d4c26cbd9a - body:{} - query: - statusCode: 200"}
-{"level":"info","message":"[log] -:- url:/users/c796935a-76a5-41bc-b76e-18d4c26cbd9a - body:{} - query: - statusCode: 200"}
-{"level":"info","message":"[log] -:- url:/users - body:{\"name\":\"TEST_USER\",\"login\":\"test_user\",\"password\":\"T35t_P@55w0rd\"} - query: - statusCode: 200"}
-{"level":"info","message":"[log] -:- url:/users/0ecb7f22-55a4-4b32-9cd1-93c84b968507 - body:{} - query: - statusCode: 200"}
-{"level":"info","message":"[log] -:- url:/users - body:{\"name\":\"TEST_USER\",\"login\":\"test_user\",\"password\":\"T35t_P@55w0rd\"} - query: - statusCode: 200"}
-{"level":"info","message":"[log] -:- url:/boards - body:{\"title\":\"Autotest board\",\"columns\":[{\"title\":\"Backlog\",\"order\":1},{\"title\":\"Sprint\",\"order\":2}]} - query: - statusCode: 200"}
-{"level":"info","message":"[log] -:- url:/boards/cce7edc0-6b39-4f1d-a27f-c9500636885f/tasks - body:{\"title\":\"Task #1\",\"order\":1,\"description\":\"Lorem ipsum\",\"userId\":\"e9fdac6b-8d02-4441-a787-06c301d000b4\",\"boardId\":\"cce7edc0-6b39-4f1d-a27f-c9500636885f\"} - query: - statusCode: 200"}
-{"level":"info","message":"[log] -:- url:/boards/cce7edc0-6b39-4f1d-a27f-c9500636885f/tasks - body:{\"title\":\"Task #2\",\"order\":2,\"description\":\"Lorem ipsum\",\"userId\":\"e9fdac6b-8d02-4441-a787-06c301d000b4\",\"boardId\":\"cce7edc0-6b39-4f1d-a27f-c9500636885f\"} - query: - statusCode: 200"}
-{"level":"info","message":"[log] -:- url:/users/e9fdac6b-8d02-4441-a787-06c301d000b4 - body:{} - query: - statusCode: 200"}
-{"level":"info","message":"[log] -:- url:/boards/cce7edc0-6b39-4f1d-a27f-c9500636885f/tasks/312869d0-998c-4fce-a20d-9a36357253f0 - body:{} - query: - statusCode: 200"}
-{"level":"info","message":"[log] -:- url:/boards/cce7edc0-6b39-4f1d-a27f-c9500636885f/tasks/d28477e8-bb3c-4dc2-a4c0-d05a1fb99e80 - body:{} - query: - statusCode: 200"}
-{"level":"info","message":"[log] -:- url:/boards/cce7edc0-6b39-4f1d-a27f-c9500636885f/tasks/312869d0-998c-4fce-a20d-9a36357253f0 - body:{} - query: - statusCode: 200"}
-{"level":"info","message":"[log] -:- url:/boards/cce7edc0-6b39-4f1d-a27f-c9500636885f/tasks/d28477e8-bb3c-4dc2-a4c0-d05a1fb99e80 - body:{} - query: - statusCode: 200"}
-{"level":"info","message":"[log] -:- url:/boards/cce7edc0-6b39-4f1d-a27f-c9500636885f - body:{} - query: - statusCode: 200"}
-{"level":"info","message":"[log] -:- url:/boards - body:{\"title\":\"Autotest board\",\"columns\":[{\"title\":\"Backlog\",\"order\":1},{\"title\":\"Sprint\",\"order\":2}]} - query: - statusCode: 200"}
-{"level":"info","message":"[log] -:- url:/boards - body:{} - query: - statusCode: 200"}
-{"level":"info","message":"[log] -:- url:/boards - body:{} - query: - statusCode: 200"}
-{"level":"info","message":"[log] -:- url:/boards/3550fff5-c332-4cdd-a420-75125b2a1657 - body:{} - query: - statusCode: 200"}
-{"level":"info","message":"[log] -:- url:/boards - body:{\"title\":\"Autotest board\",\"columns\":[{\"title\":\"Backlog\",\"order\":1},{\"title\":\"Sprint\",\"order\":2}]} - query: - statusCode: 200"}
-{"level":"info","message":"[log] -:- url:/boards/2a8e1603-058b-4ab2-9454-cc9d5cde5235 - body:{} - query: - statusCode: 200"}
-{"level":"info","message":"[log] -:- url:/boards - body:{\"title\":\"Autotest board\",\"columns\":[{\"title\":\"Backlog\",\"order\":1},{\"title\":\"Sprint\",\"order\":2}]} - query: - statusCode: 200"}
-{"level":"info","message":"[log] -:- url:/boards/935da0a6-577a-4f25-bfd6-e751b3edd04e - body:{\"id\":\"935da0a6-577a-4f25-bfd6-e751b3edd04e\",\"title\":\"Autotest updated board\",\"columns\":[{\"title\":\"Backlog\",\"order\":1},{\"title\":\"Sprint\",\"order\":2}]} - query: - statusCode: 200"}
-{"level":"info","message":"[log] -:- url:/boards/935da0a6-577a-4f25-bfd6-e751b3edd04e - body:{} - query: - statusCode: 200"}
-{"level":"info","message":"[log] -:- url:/boards/935da0a6-577a-4f25-bfd6-e751b3edd04e - body:{} - query: - statusCode: 200"}
-{"level":"info","message":"[log] -:- url:/boards - body:{\"title\":\"Autotest board\",\"columns\":[{\"title\":\"Backlog\",\"order\":1},{\"title\":\"Sprint\",\"order\":2}]} - query: - statusCode: 200"}
-{"level":"info","message":"[log] -:- url:/boards/850982e8-77da-49c5-b5da-6ce616cb57af - body:{} - query: - statusCode: 200"}
-{"level":"info","message":"[log] -:- url:/boards/850982e8-77da-49c5-b5da-6ce616cb57af - body:{} - query: - statusCode: 200"}
-{"level":"info","message":"[log] -:- url:/boards - body:{\"title\":\"Autotest board\",\"columns\":[{\"title\":\"Backlog\",\"order\":1},{\"title\":\"Sprint\",\"order\":2}]} - query: - statusCode: 200"}
-{"level":"info","message":"[log] -:- url:/boards/a5180e91-33ed-4fd2-8bcd-8a2152eafaf5/tasks - body:{\"title\":\"Task #1\",\"order\":1,\"description\":\"Lorem ipsum\",\"boardId\":\"a5180e91-33ed-4fd2-8bcd-8a2152eafaf5\",\"userId\":null,\"columnId\":null} - query: - statusCode: 200"}
-{"level":"info","message":"[log] -:- url:/boards/a5180e91-33ed-4fd2-8bcd-8a2152eafaf5/tasks - body:{\"title\":\"Task #2\",\"order\":2,\"description\":\"Lorem ipsum\",\"boardId\":\"a5180e91-33ed-4fd2-8bcd-8a2152eafaf5\",\"userId\":null,\"columnId\":null} - query: - statusCode: 200"}
-{"level":"info","message":"[log] -:- url:/boards/a5180e91-33ed-4fd2-8bcd-8a2152eafaf5/tasks - body:{\"title\":\"Task #3\",\"order\":3,\"description\":\"Lorem ipsum\",\"boardId\":\"a5180e91-33ed-4fd2-8bcd-8a2152eafaf5\",\"userId\":null,\"columnId\":null} - query: - statusCode: 200"}
-{"level":"info","message":"[log] -:- url:/boards/a5180e91-33ed-4fd2-8bcd-8a2152eafaf5/tasks - body:{\"title\":\"Task #4\",\"order\":4,\"description\":\"Lorem ipsum\",\"boardId\":\"a5180e91-33ed-4fd2-8bcd-8a2152eafaf5\",\"userId\":null,\"columnId\":null} - query: - statusCode: 200"}
-{"level":"info","message":"[log] -:- url:/boards/a5180e91-33ed-4fd2-8bcd-8a2152eafaf5/tasks - body:{\"title\":\"Task #5\",\"order\":5,\"description\":\"Lorem ipsum\",\"boardId\":\"a5180e91-33ed-4fd2-8bcd-8a2152eafaf5\",\"userId\":null,\"columnId\":null} - query: - statusCode: 200"}
-{"level":"info","message":"[log] -:- url:/boards/a5180e91-33ed-4fd2-8bcd-8a2152eafaf5/tasks/c6e6c45c-7d9e-4202-8ae3-c1def2fb9d17 - body:{} - query: - statusCode: 200"}
-{"level":"info","message":"[log] -:- url:/boards/a5180e91-33ed-4fd2-8bcd-8a2152eafaf5/tasks/83a19846-d496-48d8-92fd-3be80a104a4a - body:{} - query: - statusCode: 200"}
-{"level":"info","message":"[log] -:- url:/boards/a5180e91-33ed-4fd2-8bcd-8a2152eafaf5/tasks/3a5a14db-6ea2-49b8-8f3c-d0ebd72c05ce - body:{} - query: - statusCode: 200"}
-{"level":"info","message":"[log] -:- url:/boards/a5180e91-33ed-4fd2-8bcd-8a2152eafaf5/tasks/6fa643ef-4aea-4bd8-8c83-ae2679236101 - body:{} - query: - statusCode: 200"}
-{"level":"info","message":"[log] -:- url:/boards/a5180e91-33ed-4fd2-8bcd-8a2152eafaf5/tasks/f4ebe556-de9a-4d58-975e-20a3be3e2831 - body:{} - query: - statusCode: 200"}
-{"level":"info","message":"[log] -:- url:/boards/a5180e91-33ed-4fd2-8bcd-8a2152eafaf5 - body:{} - query: - statusCode: 200"}
-{"level":"info","message":"[log] -:- url:/boards/a5180e91-33ed-4fd2-8bcd-8a2152eafaf5/tasks/c6e6c45c-7d9e-4202-8ae3-c1def2fb9d17 - body:{} - query: - statusCode: 200"}
-{"level":"info","message":"[log] -:- url:/boards/a5180e91-33ed-4fd2-8bcd-8a2152eafaf5/tasks/83a19846-d496-48d8-92fd-3be80a104a4a - body:{} - query: - statusCode: 200"}
-{"level":"info","message":"[log] -:- url:/boards/a5180e91-33ed-4fd2-8bcd-8a2152eafaf5/tasks/3a5a14db-6ea2-49b8-8f3c-d0ebd72c05ce - body:{} - query: - statusCode: 200"}
-{"level":"info","message":"[log] -:- url:/boards/a5180e91-33ed-4fd2-8bcd-8a2152eafaf5/tasks/6fa643ef-4aea-4bd8-8c83-ae2679236101 - body:{} - query: - statusCode: 200"}
-{"level":"info","message":"[log] -:- url:/boards/a5180e91-33ed-4fd2-8bcd-8a2152eafaf5/tasks/f4ebe556-de9a-4d58-975e-20a3be3e2831 - body:{} - query: - statusCode: 200"}
-{"level":"info","message":"[log] -:- url:/boards/3550fff5-c332-4cdd-a420-75125b2a1657 - body:{} - query: - statusCode: 200"}
-{"level":"info","message":"[log] -:- url:/boards - body:{\"title\":\"Autotest board\",\"columns\":[{\"title\":\"Backlog\",\"order\":1},{\"title\":\"Sprint\",\"order\":2}]} - query: - statusCode: 200"}
-{"level":"info","message":"[log] -:- url:/boards/8c8a6da0-56c2-4b4d-b524-1734b5acf2e7/tasks - body:{\"title\":\"Autotest task\",\"order\":0,\"description\":\"Lorem ipsum\",\"userId\":null,\"boardId\":null,\"columnId\":null} - query: - statusCode: 200"}
-{"level":"info","message":"[log] -:- url:/boards/8c8a6da0-56c2-4b4d-b524-1734b5acf2e7/tasks - body:{} - query: - statusCode: 200"}
-{"level":"info","message":"[log] -:- url:/boards/8c8a6da0-56c2-4b4d-b524-1734b5acf2e7/tasks - body:{} - query: - statusCode: 200"}
-{"level":"info","message":"[log] -:- url:/boards/8c8a6da0-56c2-4b4d-b524-1734b5acf2e7/tasks/6a292497-d95d-4509-a0f3-7592d808bc37 - body:{} - query: - statusCode: 200"}
-{"level":"info","message":"[log] -:- url:/boards/8c8a6da0-56c2-4b4d-b524-1734b5acf2e7/tasks - body:{\"title\":\"Autotest task\",\"order\":0,\"description\":\"Lorem ipsum\",\"userId\":null,\"boardId\":null,\"columnId\":null} - query: - statusCode: 200"}
-{"level":"info","message":"[log] -:- url:/boards/8c8a6da0-56c2-4b4d-b524-1734b5acf2e7/tasks/0552dcbe-d4e6-4450-ac28-caa25815efce - body:{} - query: - statusCode: 200"}
-{"level":"info","message":"[log] -:- url:/boards/8c8a6da0-56c2-4b4d-b524-1734b5acf2e7/tasks - body:{\"title\":\"Autotest task\",\"order\":0,\"description\":\"Lorem ipsum\",\"userId\":null,\"boardId\":null,\"columnId\":null} - query: - statusCode: 200"}
-{"level":"info","message":"[log] -:- url:/boards/8c8a6da0-56c2-4b4d-b524-1734b5acf2e7/tasks/99195d7a-e217-443e-9a50-67dc458ae403 - body:{\"id\":\"99195d7a-e217-443e-9a50-67dc458ae403\",\"title\":\"Autotest updated task\",\"order\":0,\"description\":\"Lorem ipsum\",\"userId\":null,\"boardId\":\"8c8a6da0-56c2-4b4d-b524-1734b5acf2e7\",\"columnId\":null} - query: - statusCode: 200"}
-{"level":"info","message":"[log] -:- url:/boards/8c8a6da0-56c2-4b4d-b524-1734b5acf2e7/tasks/99195d7a-e217-443e-9a50-67dc458ae403 - body:{} - query: - statusCode: 200"}
-{"level":"info","message":"[log] -:- url:/boards/8c8a6da0-56c2-4b4d-b524-1734b5acf2e7/tasks/6a292497-d95d-4509-a0f3-7592d808bc37 - body:{} - query: - statusCode: 200"}
-{"level":"info","message":"[log] -:- url:/boards/8c8a6da0-56c2-4b4d-b524-1734b5acf2e7/tasks/6a292497-d95d-4509-a0f3-7592d808bc37 - body:{} - query: - statusCode: 200"}
-{"level":"info","message":"[log] -:- url:/boards/8c8a6da0-56c2-4b4d-b524-1734b5acf2e7/tasks/6a292497-d95d-4509-a0f3-7592d808bc37 - body:{} - query: - statusCode: 200"}
-{"level":"info","message":"[log] -:- url:/boards/8c8a6da0-56c2-4b4d-b524-1734b5acf2e7 - body:{} - query: - statusCode: 200"}
+{"level":"info","message":"[info --LEVEL = info] -:- url:/users - body:{} - query:{} - statusCode: 200"}
+{"level":"info","message":"[info --LEVEL = info] -:- url:/users - body:{\"name\":\"TEST_USER\",\"login\":\"test_user\",\"password\":\"T35t_P@55w0rd\"} - query:{} - statusCode: 200"}
+{"level":"info","message":"[info --LEVEL = info] -:- url:/users/fff6a0ed-578a-4b00-9989-1fe2f460b70b - body:{} - query:{} - statusCode: 200"}
+{"level":"info","message":"[info --LEVEL = info] -:- url:/users/fff6a0ed-578a-4b00-9989-1fe2f460b70b - body:{} - query:{} - statusCode: 200"}
+{"level":"info","message":"[info --LEVEL = info] -:- url:/users - body:{\"name\":\"TEST_USER\",\"login\":\"test_user\",\"password\":\"T35t_P@55w0rd\"} - query:{} - statusCode: 200"}
+{"level":"info","message":"[info --LEVEL = info] -:- url:/users/9b3ce9d8-a379-40ba-9cfd-b2582686fbe4 - body:{} - query:{} - statusCode: 200"}
+{"level":"info","message":"[info --LEVEL = info] -:- url:/users - body:{\"name\":\"TEST_USER\",\"login\":\"test_user\",\"password\":\"T35t_P@55w0rd\"} - query:{} - statusCode: 200"}
+{"level":"info","message":"[info --LEVEL = info] -:- url:/users/456db155-3db3-4ec4-9e40-028f75ac8049 - body:{\"name\":\"Autotest updated TEST_USER\",\"login\":\"test_user\",\"password\":\"T35t_P@55w0rd\",\"id\":\"456db155-3db3-4ec4-9e40-028f75ac8049\"} - query:{} - statusCode: 200"}
+{"level":"info","message":"[info --LEVEL = info] -:- url:/users/456db155-3db3-4ec4-9e40-028f75ac8049 - body:{} - query:{} - statusCode: 200"}
+{"level":"info","message":"[info --LEVEL = info] -:- url:/users/456db155-3db3-4ec4-9e40-028f75ac8049 - body:{} - query:{} - statusCode: 200"}
+{"level":"info","message":"[info --LEVEL = info] -:- url:/users - body:{\"name\":\"TEST_USER\",\"login\":\"test_user\",\"password\":\"T35t_P@55w0rd\"} - query:{} - statusCode: 200"}
+{"level":"info","message":"[info --LEVEL = info] -:- url:/users/3c7851e7-f8cb-40d2-b0f8-85dd526418fb - body:{} - query:{} - statusCode: 200"}
+{"level":"info","message":"[info --LEVEL = info] -:- url:/users - body:{\"name\":\"TEST_USER\",\"login\":\"test_user\",\"password\":\"T35t_P@55w0rd\"} - query:{} - statusCode: 200"}
+{"level":"info","message":"[info --LEVEL = info] -:- url:/boards - body:{\"title\":\"Autotest board\",\"columns\":[{\"title\":\"Backlog\",\"order\":1},{\"title\":\"Sprint\",\"order\":2}]} - query:{} - statusCode: 200"}
+{"level":"info","message":"[info --LEVEL = info] -:- url:/boards/d65e73f0-ff6f-41bb-9e97-54c7d1575760/tasks - body:{\"title\":\"Task #1\",\"order\":1,\"description\":\"Lorem ipsum\",\"userId\":\"4c6582e6-02e6-48d5-98fd-6c6028573f24\",\"boardId\":\"d65e73f0-ff6f-41bb-9e97-54c7d1575760\"} - query:{} - statusCode: 200"}
+{"level":"info","message":"[info --LEVEL = info] -:- url:/boards/d65e73f0-ff6f-41bb-9e97-54c7d1575760/tasks - body:{\"title\":\"Task #2\",\"order\":2,\"description\":\"Lorem ipsum\",\"userId\":\"4c6582e6-02e6-48d5-98fd-6c6028573f24\",\"boardId\":\"d65e73f0-ff6f-41bb-9e97-54c7d1575760\"} - query:{} - statusCode: 200"}
+{"level":"info","message":"[info --LEVEL = info] -:- url:/users/4c6582e6-02e6-48d5-98fd-6c6028573f24 - body:{} - query:{} - statusCode: 200"}
+{"level":"info","message":"[info --LEVEL = info] -:- url:/boards/d65e73f0-ff6f-41bb-9e97-54c7d1575760/tasks/efe10bdf-9486-46f3-8ee0-55bf16c7822a - body:{} - query:{} - statusCode: 200"}
+{"level":"info","message":"[info --LEVEL = info] -:- url:/boards/d65e73f0-ff6f-41bb-9e97-54c7d1575760/tasks/6c0bb064-c674-472e-ada5-34c60061b1fb - body:{} - query:{} - statusCode: 200"}
+{"level":"info","message":"[info --LEVEL = info] -:- url:/boards/d65e73f0-ff6f-41bb-9e97-54c7d1575760/tasks/efe10bdf-9486-46f3-8ee0-55bf16c7822a - body:{} - query:{} - statusCode: 200"}
+{"level":"info","message":"[info --LEVEL = info] -:- url:/boards/d65e73f0-ff6f-41bb-9e97-54c7d1575760/tasks/6c0bb064-c674-472e-ada5-34c60061b1fb - body:{} - query:{} - statusCode: 200"}
+{"level":"info","message":"[info --LEVEL = info] -:- url:/boards/d65e73f0-ff6f-41bb-9e97-54c7d1575760 - body:{} - query:{} - statusCode: 200"}
+{"level":"info","message":"[info --LEVEL = info] -:- url:/boards - body:{\"title\":\"Autotest board\",\"columns\":[{\"title\":\"Backlog\",\"order\":1},{\"title\":\"Sprint\",\"order\":2}]} - query:{} - statusCode: 200"}
+{"level":"info","message":"[info --LEVEL = info] -:- url:/boards - body:{} - query:{} - statusCode: 200"}
+{"level":"info","message":"[info --LEVEL = info] -:- url:/boards - body:{} - query:{} - statusCode: 200"}
+{"level":"info","message":"[info --LEVEL = info] -:- url:/boards/b7bf9cbb-9722-4bd6-97a0-1430b6a6795f - body:{} - query:{} - statusCode: 200"}
+{"level":"info","message":"[info --LEVEL = info] -:- url:/boards - body:{\"title\":\"Autotest board\",\"columns\":[{\"title\":\"Backlog\",\"order\":1},{\"title\":\"Sprint\",\"order\":2}]} - query:{} - statusCode: 200"}
+{"level":"info","message":"[info --LEVEL = info] -:- url:/boards/84a1a3fc-acd8-42f7-9252-2c723212caea - body:{} - query:{} - statusCode: 200"}
+{"level":"info","message":"[info --LEVEL = info] -:- url:/boards - body:{\"title\":\"Autotest board\",\"columns\":[{\"title\":\"Backlog\",\"order\":1},{\"title\":\"Sprint\",\"order\":2}]} - query:{} - statusCode: 200"}
+{"level":"info","message":"[info --LEVEL = info] -:- url:/boards/d715ac8b-5cb8-4a17-95eb-e475a19057f3 - body:{\"id\":\"d715ac8b-5cb8-4a17-95eb-e475a19057f3\",\"title\":\"Autotest updated board\",\"columns\":[{\"title\":\"Backlog\",\"order\":1},{\"title\":\"Sprint\",\"order\":2}]} - query:{} - statusCode: 200"}
+{"level":"info","message":"[info --LEVEL = info] -:- url:/boards/d715ac8b-5cb8-4a17-95eb-e475a19057f3 - body:{} - query:{} - statusCode: 200"}
+{"level":"info","message":"[info --LEVEL = info] -:- url:/boards/d715ac8b-5cb8-4a17-95eb-e475a19057f3 - body:{} - query:{} - statusCode: 200"}
+{"level":"info","message":"[info --LEVEL = info] -:- url:/boards - body:{\"title\":\"Autotest board\",\"columns\":[{\"title\":\"Backlog\",\"order\":1},{\"title\":\"Sprint\",\"order\":2}]} - query:{} - statusCode: 200"}
+{"level":"info","message":"[info --LEVEL = info] -:- url:/boards/b7adc09a-faaa-4b84-b006-627d3d6556b4 - body:{} - query:{} - statusCode: 200"}
+{"level":"info","message":"[info --LEVEL = info] -:- url:/boards/b7adc09a-faaa-4b84-b006-627d3d6556b4 - body:{} - query:{} - statusCode: 200"}
+{"level":"info","message":"[info --LEVEL = info] -:- url:/boards - body:{\"title\":\"Autotest board\",\"columns\":[{\"title\":\"Backlog\",\"order\":1},{\"title\":\"Sprint\",\"order\":2}]} - query:{} - statusCode: 200"}
+{"level":"info","message":"[info --LEVEL = info] -:- url:/boards/ccc6bb0b-6494-4e6f-a1c5-28ae3d552a48/tasks - body:{\"title\":\"Task #1\",\"order\":1,\"description\":\"Lorem ipsum\",\"boardId\":\"ccc6bb0b-6494-4e6f-a1c5-28ae3d552a48\",\"userId\":null,\"columnId\":null} - query:{} - statusCode: 200"}
+{"level":"info","message":"[info --LEVEL = info] -:- url:/boards/ccc6bb0b-6494-4e6f-a1c5-28ae3d552a48/tasks - body:{\"title\":\"Task #2\",\"order\":2,\"description\":\"Lorem ipsum\",\"boardId\":\"ccc6bb0b-6494-4e6f-a1c5-28ae3d552a48\",\"userId\":null,\"columnId\":null} - query:{} - statusCode: 200"}
+{"level":"info","message":"[info --LEVEL = info] -:- url:/boards/ccc6bb0b-6494-4e6f-a1c5-28ae3d552a48/tasks - body:{\"title\":\"Task #3\",\"order\":3,\"description\":\"Lorem ipsum\",\"boardId\":\"ccc6bb0b-6494-4e6f-a1c5-28ae3d552a48\",\"userId\":null,\"columnId\":null} - query:{} - statusCode: 200"}
+{"level":"info","message":"[info --LEVEL = info] -:- url:/boards/ccc6bb0b-6494-4e6f-a1c5-28ae3d552a48/tasks - body:{\"title\":\"Task #4\",\"order\":4,\"description\":\"Lorem ipsum\",\"boardId\":\"ccc6bb0b-6494-4e6f-a1c5-28ae3d552a48\",\"userId\":null,\"columnId\":null} - query:{} - statusCode: 200"}
+{"level":"info","message":"[info --LEVEL = info] -:- url:/boards/ccc6bb0b-6494-4e6f-a1c5-28ae3d552a48/tasks - body:{\"title\":\"Task #5\",\"order\":5,\"description\":\"Lorem ipsum\",\"boardId\":\"ccc6bb0b-6494-4e6f-a1c5-28ae3d552a48\",\"userId\":null,\"columnId\":null} - query:{} - statusCode: 200"}
+{"level":"info","message":"[info --LEVEL = info] -:- url:/boards/ccc6bb0b-6494-4e6f-a1c5-28ae3d552a48/tasks/9d3380b4-3451-4fa4-8e83-0d25f1b44f88 - body:{} - query:{} - statusCode: 200"}
+{"level":"info","message":"[info --LEVEL = info] -:- url:/boards/ccc6bb0b-6494-4e6f-a1c5-28ae3d552a48/tasks/b9fc5619-5895-4735-85d8-ec6d1720f575 - body:{} - query:{} - statusCode: 200"}
+{"level":"info","message":"[info --LEVEL = info] -:- url:/boards/ccc6bb0b-6494-4e6f-a1c5-28ae3d552a48/tasks/6bfa6af7-794c-4c8b-bafa-da544dec44c6 - body:{} - query:{} - statusCode: 200"}
+{"level":"info","message":"[info --LEVEL = info] -:- url:/boards/ccc6bb0b-6494-4e6f-a1c5-28ae3d552a48/tasks/afc768e9-ec2a-4241-b5f4-d41fb7d1197d - body:{} - query:{} - statusCode: 200"}
+{"level":"info","message":"[info --LEVEL = info] -:- url:/boards/ccc6bb0b-6494-4e6f-a1c5-28ae3d552a48/tasks/44ccb6e3-35da-461b-839d-9a3651b52b82 - body:{} - query:{} - statusCode: 200"}
+{"level":"info","message":"[info --LEVEL = info] -:- url:/boards/ccc6bb0b-6494-4e6f-a1c5-28ae3d552a48 - body:{} - query:{} - statusCode: 200"}
+{"level":"info","message":"[info --LEVEL = info] -:- url:/boards/ccc6bb0b-6494-4e6f-a1c5-28ae3d552a48/tasks/9d3380b4-3451-4fa4-8e83-0d25f1b44f88 - body:{} - query:{} - statusCode: 200"}
+{"level":"info","message":"[info --LEVEL = info] -:- url:/boards/ccc6bb0b-6494-4e6f-a1c5-28ae3d552a48/tasks/b9fc5619-5895-4735-85d8-ec6d1720f575 - body:{} - query:{} - statusCode: 200"}
+{"level":"info","message":"[info --LEVEL = info] -:- url:/boards/ccc6bb0b-6494-4e6f-a1c5-28ae3d552a48/tasks/6bfa6af7-794c-4c8b-bafa-da544dec44c6 - body:{} - query:{} - statusCode: 200"}
+{"level":"info","message":"[info --LEVEL = info] -:- url:/boards/ccc6bb0b-6494-4e6f-a1c5-28ae3d552a48/tasks/afc768e9-ec2a-4241-b5f4-d41fb7d1197d - body:{} - query:{} - statusCode: 200"}
+{"level":"info","message":"[info --LEVEL = info] -:- url:/boards/ccc6bb0b-6494-4e6f-a1c5-28ae3d552a48/tasks/44ccb6e3-35da-461b-839d-9a3651b52b82 - body:{} - query:{} - statusCode: 200"}
+{"level":"info","message":"[info --LEVEL = info] -:- url:/boards/b7bf9cbb-9722-4bd6-97a0-1430b6a6795f - body:{} - query:{} - statusCode: 200"}
+{"level":"info","message":"[info --LEVEL = info] -:- url:/boards - body:{\"title\":\"Autotest board\",\"columns\":[{\"title\":\"Backlog\",\"order\":1},{\"title\":\"Sprint\",\"order\":2}]} - query:{} - statusCode: 200"}
+{"level":"info","message":"[info --LEVEL = info] -:- url:/boards/c7247a5e-8b57-4d2b-a312-fa186de5cb81/tasks - body:{\"title\":\"Autotest task\",\"order\":0,\"description\":\"Lorem ipsum\",\"userId\":null,\"boardId\":null,\"columnId\":null} - query:{} - statusCode: 200"}
+{"level":"info","message":"[info --LEVEL = info] -:- url:/boards/c7247a5e-8b57-4d2b-a312-fa186de5cb81/tasks - body:{} - query:{} - statusCode: 200"}
+{"level":"info","message":"[info --LEVEL = info] -:- url:/boards/c7247a5e-8b57-4d2b-a312-fa186de5cb81/tasks - body:{} - query:{} - statusCode: 200"}
+{"level":"info","message":"[info --LEVEL = info] -:- url:/boards/c7247a5e-8b57-4d2b-a312-fa186de5cb81/tasks/286f4f01-1462-44ed-b995-eeb75b5c42e5 - body:{} - query:{} - statusCode: 200"}
+{"level":"info","message":"[info --LEVEL = info] -:- url:/boards/c7247a5e-8b57-4d2b-a312-fa186de5cb81/tasks - body:{\"title\":\"Autotest task\",\"order\":0,\"description\":\"Lorem ipsum\",\"userId\":null,\"boardId\":null,\"columnId\":null} - query:{} - statusCode: 200"}
+{"level":"info","message":"[info --LEVEL = info] -:- url:/boards/c7247a5e-8b57-4d2b-a312-fa186de5cb81/tasks/c8226b8c-b040-48da-bfa4-8b07d525b3f4 - body:{} - query:{} - statusCode: 200"}
+{"level":"info","message":"[info --LEVEL = info] -:- url:/boards/c7247a5e-8b57-4d2b-a312-fa186de5cb81/tasks - body:{\"title\":\"Autotest task\",\"order\":0,\"description\":\"Lorem ipsum\",\"userId\":null,\"boardId\":null,\"columnId\":null} - query:{} - statusCode: 200"}
+{"level":"info","message":"[info --LEVEL = info] -:- url:/boards/c7247a5e-8b57-4d2b-a312-fa186de5cb81/tasks/c27f4b95-22b8-4945-98d3-1bff26742ac6 - body:{\"id\":\"c27f4b95-22b8-4945-98d3-1bff26742ac6\",\"title\":\"Autotest updated task\",\"order\":0,\"description\":\"Lorem ipsum\",\"userId\":null,\"boardId\":\"c7247a5e-8b57-4d2b-a312-fa186de5cb81\",\"columnId\":null} - query:{} - statusCode: 200"}
+{"level":"info","message":"[info --LEVEL = info] -:- url:/boards/c7247a5e-8b57-4d2b-a312-fa186de5cb81/tasks/c27f4b95-22b8-4945-98d3-1bff26742ac6 - body:{} - query:{} - statusCode: 200"}
+{"level":"info","message":"[info --LEVEL = info] -:- url:/boards/c7247a5e-8b57-4d2b-a312-fa186de5cb81/tasks/286f4f01-1462-44ed-b995-eeb75b5c42e5 - body:{} - query:{} - statusCode: 200"}
+{"level":"info","message":"[info --LEVEL = info] -:- url:/boards/c7247a5e-8b57-4d2b-a312-fa186de5cb81/tasks/286f4f01-1462-44ed-b995-eeb75b5c42e5 - body:{} - query:{} - statusCode: 200"}
+{"level":"info","message":"[info --LEVEL = info] -:- url:/boards/c7247a5e-8b57-4d2b-a312-fa186de5cb81/tasks/286f4f01-1462-44ed-b995-eeb75b5c42e5 - body:{} - query:{} - statusCode: 200"}
+{"level":"info","message":"[info --LEVEL = info] -:- url:/boards/c7247a5e-8b57-4d2b-a312-fa186de5cb81 - body:{} - query:{} - statusCode: 200"}

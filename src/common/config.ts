@@ -5,11 +5,27 @@ dotenv.config({
   path: path.join(__dirname, '../../.env')
 });
 
-module.exports = {
+// const levels = {
+//   0: "error",
+// 1: "warn",
+// 2: "info"
+// }
+
+const levels:string[] = ["error", "warn", "info"]
+  
+const level:number = process.env.LOG_LVL !== undefined 
+                     && +process.env.LOG_LVL < 3 ?  
+                     Number(process.env.LOG_LVL) : 2;
+ 
+const config = {
   PORT: process.env.PORT,
+  //LOG_LVL: levels[level],
   NODE_ENV: process.env.NODE_ENV,
   MONGO_CONNECTION_STRING: process.env.MONGO_CONNECTION_STRING,
   JWT_SECRET_KEY: process.env.JWT_SECRET_KEY,
   AUTH_MODE: process.env.AUTH_MODE === 'true'
 };
+export const LOG_LVL = levels[level]
+
 export const {PORT} = process.env;
+//export const { LOG_LVL}= config;

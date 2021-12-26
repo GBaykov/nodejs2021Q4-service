@@ -8,6 +8,7 @@ import userRouter from './resources/users/user.router';
 import tasksRouter from './resources/tasks/task.router';
 import bordsRouter from './resources/bords/bords.router';
 import {logger, logging} from './logger/logger';
+import { LOG_LVL } from './common/config';
 
 
 
@@ -20,7 +21,7 @@ app.use('/doc', swaggerUI.serve, swaggerUI.setup(swaggerDocument));
 
 app.use('/', (req:Request, res:Response, next:NextFunction) => {
   if (req.originalUrl === '/') {
-    res.send('Service is running!');
+    res.send(`Service is running!`);
     return;
   }
   next();
