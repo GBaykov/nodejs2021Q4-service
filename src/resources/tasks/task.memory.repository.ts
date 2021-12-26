@@ -38,7 +38,7 @@ export const getTask = async(id:string, boardId:string) => {
   const task = new Task(data); 
   task.boardId = boardId;
   taskDB.push(task);
-  if(!task) throw new RequestError("Error: error while adding new task", 404)
+  if(!task) throw new RequestError("Error in addTask: error while adding new task", 404)
   return task;
 }
 
@@ -74,7 +74,6 @@ export const deleteTask = async(id:string) => {
   if(!index) throw new RequestError("Error in deleteTask: no task with such id", 404);
   taskDB.splice(index, 1);
   const status: number = 202;
-  console.log(index)
   //if(index === -1) throw new RequestError("Error: error while deleting task", 404)
   if(index !== -1) return 202  //
    //throw new RequestError("Error: error while deleting task", 404);
