@@ -5,6 +5,26 @@
 - Git - [Download & Install Git](https://git-scm.com/downloads).
 - Node.js - [Download & Install Node.js](https://nodejs.org/en/download/) and the npm package manager.
 
+
+
+
+# DOCKER
+
+## 1. clone repo to the locals
+```
+git clone {repository URL}
+```
+## 2. to create docker image, use:
+```
+ docker-compose build
+ ```
+## 2. Now, image is built, and next step is to create docker container:
+ ``` 
+ docker-compose up 
+ ```
+
+
+
 ## Downloading
 
 ```
