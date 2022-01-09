@@ -2,10 +2,10 @@ FROM node:16-alpine
 
 EXPOSE 4000
 
-WORKDIR /serv/app/src
+WORKDIR /docker
 
-# аналогично COPY package.json /.
-COPY package.json .
+# регулярка на копирование любых package
+COPY package*.json .
 
 RUN npm install 
 

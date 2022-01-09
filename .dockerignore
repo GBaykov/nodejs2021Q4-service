@@ -1,7 +1,5 @@
 .github
+.git
 .vscode
-doc
 node_modules
-errors.log
-combined.log
 dist

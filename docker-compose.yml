@@ -1,0 +1,20 @@
+version: '3'
+
+services:
+  rest-server:
+    image: node:16-alpine
+    build: .
+    ports: 
+    - ${PORT}:${PORT}
+    environment:
+      - ${PORT}
+    restart: on-failure
+    depends_on:
+      - postgres
+
+
+  postgres:
+    build: ./database
+    image: 13.5-alpine
+    ports:
+      - ${POSTGRES_PORT}-${POSTGRES_PORT}
