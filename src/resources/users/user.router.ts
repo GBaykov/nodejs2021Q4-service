@@ -3,7 +3,8 @@ import * as bodyParser from 'body-parser';
 import User from './user.model';
 import * as usersService from './user.service';
 import { IUser } from '../../types';
-
+import { StatusCodes} from 'http-status-codes';
+const { OK, CREATED, NOT_FOUND, BAD_REQUEST, NO_CONTENT } = StatusCodes
 
 
 const router: Router = express.Router();

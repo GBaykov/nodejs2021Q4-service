@@ -2,7 +2,7 @@ import express,{Request,Response,Application, NextFunction, Express} from 'expre
 import YAML = require("yamljs")
 import swaggerUI, {SwaggerUiOptions} from 'swagger-ui-express'
 import path from 'path';
-
+import cors from 'cors';
 
 import userRouter from './resources/users/user.router';
 import tasksRouter from './resources/tasks/task.router';
@@ -15,7 +15,7 @@ import { handleErrors, loggingErrors } from './logger/errorHandler';
 
  const app:Application  = express();
 const swaggerDocument:SwaggerUiOptions = YAML.load(path.join(__dirname, '../doc/api.yaml'));
-
+app.use(cors);
 app.use(express.json());
 
 app.use('/doc', swaggerUI.serve, swaggerUI.setup(swaggerDocument));

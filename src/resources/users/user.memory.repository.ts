@@ -1,6 +1,9 @@
 import User from "./user.model";
-import db from '../../db/db';
 import {IUser} from '../../types';
+
+import db from '../../db/db';
+import { USERS_DB } from "./users.db";
+
 import { RequestError } from "../../logger/errorHandler";
 
 
