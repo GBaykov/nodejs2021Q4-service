@@ -1,8 +1,8 @@
 FROM node:16.13-alpine3.15
 
-EXPOSE 4000
+EXPOSE ${PORT}
 
-WORKDIR /docker
+WORKDIR /docker/app
 
 # регулярка на копирование любых package
 COPY package*.json .
