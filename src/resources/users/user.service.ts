@@ -12,7 +12,7 @@ export const getAll  = () => usersRepo.getAll();
  * @param id - id of user for search.
  * @returns user or error message (Promise)
  */
-export const getUser = (id: string):Promise<string | IUser> => usersRepo.getUser(id);
+export const getUser = (id: string):Promise<undefined | IUser> => usersRepo.getUser(id);
 
   /**
  * Adds the User to repository

@@ -2,7 +2,7 @@ import User from "./user.model";
 import {IUser} from '../../types';
 
 import db from '../../db/db';
-import { USERS_DB } from "./users.db";
+import { UsersDB } from "./users.db";
 
 import { RequestError } from "../../logger/errorHandler";
 
@@ -12,6 +12,9 @@ import { RequestError } from "../../logger/errorHandler";
  * @returns All Users (Promise)
  */
 export const getAll = async () =>  {
+ return UsersDB.findMany()
+ 
+ 
   if(!db[0]) throw new RequestError('Error: no users', 404)
   return db[0];
 };
@@ -21,10 +24,11 @@ export const getAll = async () =>  {
  * @param id - id of user for search.
  * @returns user or error message (Promise)
  */
-export const getUser = async(id:string):Promise<string | IUser>  => { 
-  const user = await db[0].find(item => item.id === id);
-  if(!user) throw new RequestError('Error: no user with such id', 404)
-    return User.toResponse(user);
+export const getUser = async(id:string):Promise<undefined | IUser>  => { 
+  return UsersDB.findOne(id)
+  // const user = await db[0].find(item => item.id === id);
+  // if(!user) throw new RequestError('Error: no user with such id', 404)
+  //   return User.toResponse(user);
   }
 
 /**
