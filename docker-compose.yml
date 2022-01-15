@@ -30,11 +30,11 @@ services:
     networks:
       - my-net
 
-  volumes:
-    logs:
-    db:
+volumes:
+  logs:
+  db:
 
-  networks:
-    my-net:
-      name: my-custom-network
-      driver: bridge
+networks:
+  my-net:
+    name: my-custom-network
+    driver: bridge
