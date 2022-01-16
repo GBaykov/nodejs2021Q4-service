@@ -23,3 +23,5 @@ const config = {
 export const LOG_LVL = levels[level]
 
 export const {PORT} = process.env;
+export const {POSTGRES_HOST,POSTGRES_PORT,POSTGRES_USER,POSTGRES_PASSWORD,POSTGRES_DB, POSTGRES_CONTAINERPORT} = process.env
+ 

@@ -35,7 +35,6 @@ export class USERS_DB {
         // const index =  this._db.findIndex(item => item.id === id);
         // this._db.splice(index, 1, newUser);
         // return User.toResponse(newUser); 
-
     }
     delete(id:string):void{
         this._db = this._db.filter(user => user.id !== id)
