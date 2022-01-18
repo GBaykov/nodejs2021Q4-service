@@ -15,7 +15,7 @@ import { handleErrors, loggingErrors } from './logger/errorHandler';
 
  const app:Application  = express();
 const swaggerDocument:SwaggerUiOptions = YAML.load(path.join(__dirname, '../doc/api.yaml'));
-app.use(cors);
+
 app.use(express.json());
 
 app.use('/doc', swaggerUI.serve, swaggerUI.setup(swaggerDocument));

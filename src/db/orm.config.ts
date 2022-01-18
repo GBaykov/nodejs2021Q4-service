@@ -3,7 +3,7 @@ import { POSTGRES_CONTAINERPORT, POSTGRES_DB, POSTGRES_HOST, POSTGRES_PASSWORD, 
  
 const configORM: ConnectionOptions = {
     type: 'postgres',
-    host: 'localhost',
+    host: 'postgres',
     port: Number(5432),
     username: POSTGRES_USER,
     password: POSTGRES_PASSWORD,

@@ -1,11 +1,5 @@
-.github
+
 .git
 .vscode
 node_modules
 dist
-.prettierrc
-tsconfig.json
-.gitignore
-.eslintrc.json
-.eslintignore
-test
