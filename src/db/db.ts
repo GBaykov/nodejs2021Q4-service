@@ -1,6 +1,6 @@
-import { IUser ,DB,IBoard,ITask} from '../types';
 import {createConnection, Connection, createConnections, getConnection} from "typeorm";
 import { connect } from 'http2';
+import { IUser ,DB,IBoard,ITask} from '../types';
 import configORM from './orm.config';
 
 
@@ -12,7 +12,7 @@ try{
  if (!connection.isConnected) {
   await connection.connect();
 }
-//await connection.runMigrations();
+// await connection.runMigrations();
 console.log('DataBase has connected!');
 } catch(error){
   console.log('Error while connecting to the database', error);

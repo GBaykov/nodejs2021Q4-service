@@ -1,9 +1,10 @@
 import express, {Router, Request, Response, NextFunction} from 'express';
 import * as bodyParser from 'body-parser';
+import { StatusCodes} from 'http-status-codes';
 import User from './user.model';
 import * as usersService from './user.service';
 import { IUser } from '../../types';
-import { StatusCodes} from 'http-status-codes';
+
 const { OK, CREATED, NOT_FOUND, BAD_REQUEST, NO_CONTENT } = StatusCodes
 
 

@@ -1,6 +1,6 @@
+import cors from 'cors';
 import app  from './app';
 import {LOG_LVL, PORT} from './common/config';
-import cors from 'cors';
 import { connectToDB } from './db/db';
 
 

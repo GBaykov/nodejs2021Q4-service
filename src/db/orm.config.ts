@@ -10,7 +10,7 @@ const configORM: ConnectionOptions = {
     database: POSTGRES_DB,
     logging: false,
   entities: [
-    //__dirname + '/../**/*.entity{.ts,.js}',
+    // __dirname + '/../**/*.entity{.ts,.js}',
   ],
   synchronize: true,
 };

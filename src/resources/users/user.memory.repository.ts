@@ -1,25 +1,25 @@
-//import User from "./user.model";
+// import User from "./user.model";
+import { getRepository } from 'typeorm';
 import {IUser} from '../../types';
 
 import db from '../../db/db';
-import { UsersDB } from "./users.db";
+//import { UsersDB } from "./users.db";
 
 import { RequestError } from "../../logger/errorHandler";
 
-import { getRepository } from 'typeorm';
 import { User } from '../../entities/user';
 
 /**
  * Returns all Users in the repo (Promise)
  * @returns All Users (Promise)
  */
-export const getAll = async () =>  {
-  return getRepository(User).find({})
- //return UsersDB.findMany()
+export const getAll = async () =>  
+   getRepository(User).find({})
+ // return UsersDB.findMany()
  
   // if(!db[0]) throw new RequestError('Error: no users', 404)
   // return db[0];
-};
+;
  
 /**
  * Returns User by id (Promise)

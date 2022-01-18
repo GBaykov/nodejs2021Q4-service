@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import { Entity, Column, PrimaryGeneratedColumn, OneToMany } from 'typeorm';
-//import { Task } from './task';
+import { Task } from './task';
 
 @Entity()
 export class User {
@@ -16,8 +16,8 @@ export class User {
   @Column('varchar', { length: 100 })
   password: string;
 
-  // @OneToMany<Task>((_type) => Task, (task: Task): string => task.userId as string, { cascade: true })
-  // tasks: Task[];
+  @OneToMany<Task>((_type) => Task, (task: Task): string => task.userId as string, { cascade: true })
+  tasks: Task[];
 
   static toResponse(user?: Partial<User>): Partial<User> | undefined {
     if (!user) return undefined;
