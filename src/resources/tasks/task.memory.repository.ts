@@ -36,7 +36,10 @@ export const getAll = async (boardId:string) => {
  * @returns task or error message (Promise)
  */
 export const getTask = async(id:string, boardId:string) => {
-    
+  const task = await getRepository(Task).findOne( {id} );
+  console.log('getTask', task)
+  if(!task) throw new RequestError("Error in getTask: no task with such id or boardId", 404);
+    return task;
   // const repo = getRepository(Task);
   //   const task = await repo.findOne({ where: { id, boardId } });
   //   return task;
@@ -44,12 +47,6 @@ export const getTask = async(id:string, boardId:string) => {
   // const taskRepository = getRepository(Task);
   // const task : Task[] = await taskRepository.find({ where: { id:id, boardId:boardId } });
   // return task; 
-
-
-  const task = await getRepository(Task).findOne( {id} );
-  console.log('getTask', task)
-  if(!task) throw new RequestError("Error in getTask: no task with such id or boardId", 404);
-    return task;
   }
 
  /**
@@ -75,20 +72,19 @@ export const getTask = async(id:string, boardId:string) => {
  * @returns updated task or error message (Promise)
  */
 export const updateTask = async(id:string, data:Task, boardId:string ) => {
-  const task = await getRepository(Task).findOne({ id  });
+  const task = await getRepository(Task).findOne( {id} );
 console.log("update DATA", data)
   //const task = await taskDB.find((item) => item.id === id && item.boardId === boardId);
   if(!task) throw new RequestError("Error in updateTask: no task with such id or boardId", 404);
-  // const index = await taskDB.findIndex(item => item.id === id);
-  // const newTask = new Task(data);
   task.title = data.title;
   task.userId = data.userId;
   task.description = data.description;
   task.order = data.order;
   task.columnId = data.columnId;
- 
-  await getRepository(Task).save(task)
-  console.log('updateTask', task)
+  const updatedTask = await getRepository(Task).update(id, data);
+  return updatedTask;
+  //await getRepository(Task).save(task)
+  //console.log('updateTask', task)
   // taskDB.splice(index, 1, newTask);
   // if(!task && !newTask && index === -1) throw new RequestError("Error: error while updeting task", 404);
   return task;
