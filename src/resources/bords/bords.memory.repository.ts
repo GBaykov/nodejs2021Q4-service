@@ -1,8 +1,10 @@
 import db from '../../db/db';
-import Board from './bords.model';
+//import Board from './bords.model';
 import * as taskService from '../tasks/task.service';
 import { IBoard } from '../../types';
 import { RequestError } from '../../logger/errorHandler';
+import { getRepository } from 'typeorm';
+import { Board } from '../../entities';
 
 const boardsDB = db[1];
 
@@ -10,10 +12,11 @@ const boardsDB = db[1];
  * Returns all Boards in the repo (Promise)
  * @returns All Boards (Promise)
  */
-export const getAll = async () => {
-  if(!boardsDB) throw new RequestError('Error in getAll boards: no boards', 404);
-  return boardsDB
-}
+ export const getAll = async ():Promise<Board[]> =>  {
+  const board = await  getRepository(Board).find();
+  if(!board) throw new RequestError('Error: no Board', 404)
+  return board;
+};
 
 /**
  * Returns Board by id (Promise)
@@ -21,9 +24,8 @@ export const getAll = async () => {
  * @returns board or error message (Promise)
  */
 export const getBoard = async(id:string) => {
-  const board = await boardsDB.find(item => item.id === id);
+  const board = await  getRepository(Board).findOne(id);
   if(!board) throw new RequestError('Error in getBoard:id is absent or no board with such id', 404);
-  
     return board;
   }
 
@@ -32,10 +34,11 @@ export const getBoard = async(id:string) => {
  * @param data - board to be added.
  * @returns added board or error message (Promise)
  */
-export const addBoard = async(data:IBoard) => {
-    if(!data.columns || !data.title) throw new RequestError('Error in addBoard: data.columns or data.title', 404); 
-  const board = new Board(data);
-  boardsDB.push(board);
+export const addBoard = async(data:Board) => {
+  const board = await  getRepository(Board).save(data);
+    if(!data.columns || !data.title) throw new RequestError('Error in addBoard: data.columns or data.title absent', 404); 
+  //const board = new Board(data);
+  //boardsDB.push(board);
   return board;
 }
 
@@ -45,15 +48,18 @@ export const addBoard = async(data:IBoard) => {
  * @param data - new data for updating board
  * @returns updated board or error message (Promise)
  */
-export const updateBoard = async(id:string, data:IBoard) => {
-  const board = await boardsDB.find(item => item.id === id);
+export const updateBoard = async(id:string, data:Board) => {
+  const board = await  getRepository(Board).findOne(id);
   if(!board) throw new RequestError('Error in updateBoard:id is absent or no board with such id', 404);
-  const index = await boardsDB.findIndex(item => item.id === id);
-  const newBoard = new Board(data);
-  newBoard.id = id;
-  boardsDB.splice(index, 1, newBoard);
-  if(!board && !newBoard && index === -1) throw new RequestError('Error: error while updeting board', 404);
-  return newBoard;
+  board.columns = await data.columns;
+  board.title = await data.title;
+  await getRepository(Board).save(board);
+  // const index = await boardsDB.findIndex(item => item.id === id);
+  // const newBoard = new Board(data);
+  // newBoard.id = id;
+  // boardsDB.splice(index, 1, newBoard);
+  // if(!board && !newBoard && index === -1) throw new RequestError('Error: error while updeting board', 404);
+  return board;
 }
 
 /**
@@ -62,14 +68,16 @@ export const updateBoard = async(id:string, data:IBoard) => {
  * @returns status code (202) or error message (Promise)
  */
 export const deleteBoard = async(id:string) => {
-  const index = await boardsDB.findIndex(item => item.id === id);
-  boardsDB.splice(index, 1);
+  Boolean((await getRepository(Board).delete(id)).affected);
+  
+//   const index = await boardsDB.findIndex(item => item.id === id);
+//   boardsDB.splice(index, 1);
 
-  db[2].map((task) => {
-if(task.boardId === id) {
-   taskService.deleteTask(id)
-}
-return db[2];
-  })
-  return 202
+//   db[2].map((task) => {
+// if(task.boardId === id) {
+//    taskService.deleteTask(id)
+// }
+// return db[2];
+//   })
+//   return 202
 }

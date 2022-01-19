@@ -24,11 +24,11 @@ export class Task {
 
   @ManyToOne((_type) => Board, { onDelete: 'CASCADE' })
   @TypeColumn('uuid', { name: 'boardIdId', nullable: true })
-  boardId: string;
+  boardId: string | null;
 
   @ManyToOne((_type) => Column, { onDelete: 'CASCADE' })
   @TypeColumn('uuid', { name: 'columnIdId', nullable: true })
-  columnId: string;
+  columnId: string | null;
 
   // static toResponse = (task?: Partial<Task>): Partial<Task> | undefined => task;
 }

@@ -31,7 +31,6 @@ app.use('/', (req:Request, res:Response, next:NextFunction) => {
 
 
 app.use('/', (req:Request, res:Response, next:NextFunction) => {
-  console.log('ALL WORKING')
   logging(req, res, next);
   next();
 });

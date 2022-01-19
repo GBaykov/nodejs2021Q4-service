@@ -1,13 +1,13 @@
-// import User from "./user.model";
 import { getRepository } from 'typeorm';
 import {IUser} from '../../types';
 
 import db from '../../db/db';
-// import { UsersDB } from "./users.db";
+
 
 import { RequestError } from "../../logger/errorHandler";
 
 import { User } from '../../entities/user';
+import { Task } from '../../entities';
 
 /**
  * Returns all Users in the repo (Promise)
@@ -15,14 +15,9 @@ import { User } from '../../entities/user';
  */
 export const getAll = async ():Promise<User[]> =>  {
   const users = await  getRepository(User).find();
+  if(!users) throw new RequestError('Error: no users', 404)
   return users;
-}
-   
- // return UsersDB.findMany()
- 
-  // if(!db[0]) throw new RequestError('Error: no users', 404)
-  // return db[0];
-;
+};
  
 /**
  * Returns User by id (Promise)
@@ -34,12 +29,10 @@ export const getUser = async(id:string):Promise<{
   name: string;
   login: string;
 } | undefined>  => { 
-  // return UsersDB.findOne(id)
   const user = await  getRepository(User).findOne({id});
   if(!user) throw new RequestError('Error: no user with such id', 404);
-   
-    return User.toResponse(user)
-  }
+    return User.toResponse(user);
+  };
 
 /**
  * Adds the User to repository
@@ -51,12 +44,8 @@ export const getUser = async(id:string):Promise<{
     name: string;
     login: string;
 } | undefined> => {
-// const repository = getRepository(User)
     const user =  await getRepository(User).save(data);
-  // const user = new User(data);
-  // if(!user) throw new RequestError('Error: can not create user', 401)
-  // db[0].push(user);
-  // await repository.save(user);
+   if(!user) throw new RequestError('Error: can not create user', 401)
   return User.toResponse(user);
 }
 
@@ -66,37 +55,50 @@ export const getUser = async(id:string):Promise<{
  * @param data - new data for updating user
  * @returns updated user or error message (Promise)
  */
-// export const updateUser = async(id:string, data:IUser) => {
-//   const user = await db[0].find(item => item.id === id);
-//   if(!user) throw new RequestError('Error in updateUser: no user with such id', 404)
-//   const index = await db[0].findIndex(item => item.id === id);
-//   const newUser = new User(data);
-//   newUser.id = id;
-//   db[0].splice(index, 1, newUser);
-//   if(user && newUser && index !== -1) {
-//     return User.toResponse(newUser) 
-//   } throw new RequestError('Error: error while updeting user', 404);
-// }
+export const updateUser = async(id:string, data:IUser) => {
+  const user = await  getRepository(User).findOne({id});
+  if(!user) throw new RequestError('Error in updateUser: no user with such id', 404);
+  user.login = data.login;
+  user.name = data.name;
+  user.password = data.password;
+  await getRepository(User).save(user);
+  // const index = await db[0].findIndex(item => item.id === id);
+  // const newUser = new User(data);
+  // newUser.id = id;
+  // db[0].splice(index, 1, newUser);
+  //if(user && newUser && index !== -1) {
+    return User.toResponse(user) 
+  //} throw new RequestError('Error: error while updeting user', 404);
+}
 
 /**
  * Delete the User in repository
  * @param id - id of the user to be deleted.
  * @returns status code (202) or error message (Promise)
  */
-// export const deleteUser = async(id:string) => {
-//   const index = await db[0].findIndex(item => item.id === id);
-//   if(!index) throw new RequestError('Error in deleteUser: no user with such id ', 404)
-//   db[0].splice(index, 1);
-//   db[2].map((item) => {
-//     if(item.userId === id){
-//       const it = item;
-//       it.userId = null;
-//     }
-//     return db[2]
-//   });
-//   if(index !== -1) {
-//     return 200
-//   } throw new RequestError('Error: error while deleting user', 404);
-// }
+export const deleteUser = async(id:string):Promise<void> => {
+  //const index = await db[0].findIndex(item => item.id === id);
+   //if(!id) throw new RequestError('Error: error while deleting user', 401);
+   //throw new RequestError('Error in deleteUser: no user with such id ', 404);
+   //await  getRepository(User).delete({id});
+   
+   Boolean((await getRepository(User).delete(id)).affected);
+   //Boolean((await getRepository(Task).delete(id)).affected);
+   
+   //tasks = null;
+   //await getRepository(Task).save(tasks);
+  // db[0].splice(index, 1);
+  // db[2].map((item) => {
+  //   if(item.userId === id){
+  //     const it = item;
+  //     it.userId = null;
+  //   }
+  //   return db[2]
+  // });
+  // if(index !== -1) {
+  //   return 200
+  //}
+   //throw new RequestError('Error: error while deleting user', 404);
+}
 
 
