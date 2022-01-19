@@ -9,9 +9,7 @@ const configORM: ConnectionOptions = {
     password: POSTGRES_PASSWORD,
     database: POSTGRES_DB,
     logging: false,
-  entities: [
-    // __dirname + '/../**/*.entity{.ts,.js}',
-  ],
+    entities: ['./src/entities/**/*.ts'],
   synchronize: true,
 };
  

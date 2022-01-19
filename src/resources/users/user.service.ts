@@ -1,11 +1,12 @@
 import * as usersRepo from './user.memory.repository';
 import { IUser } from "../../types";
+import User from './user.model';
 
 /**
  * Returns all Users in the repo (Promise)
  * @returns All Users (Promise)
  */
-export const getAll  = () => usersRepo.getAll();
+// export const getAll  = ():Promise<User[]> => usersRepo.getAll();
 
 /**
  * Returns User by id (Promise)

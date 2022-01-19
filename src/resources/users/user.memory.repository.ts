@@ -3,7 +3,7 @@ import { getRepository } from 'typeorm';
 import {IUser} from '../../types';
 
 import db from '../../db/db';
-//import { UsersDB } from "./users.db";
+// import { UsersDB } from "./users.db";
 
 import { RequestError } from "../../logger/errorHandler";
 
@@ -13,8 +13,11 @@ import { User } from '../../entities/user';
  * Returns all Users in the repo (Promise)
  * @returns All Users (Promise)
  */
-export const getAll = async () =>  
-   getRepository(User).find({})
+export const getAll = async ():Promise<User[]> =>  {
+  const users = await  getRepository(User).find();
+  return users;
+}
+   
  // return UsersDB.findMany()
  
   // if(!db[0]) throw new RequestError('Error: no users', 404)
@@ -26,24 +29,36 @@ export const getAll = async () =>
  * @param id - id of user for search.
  * @returns user or error message (Promise)
  */
-// export const getUser = async(id:string):Promise<undefined | IUser>  => { 
-//   return UsersDB.findOne(id)
-  // const user = await db[0].find(item => item.id === id);
-  // if(!user) throw new RequestError('Error: no user with such id', 404)
-  //   return User.toResponse(user);
-  // }
+export const getUser = async(id:string):Promise<{
+  id: string;
+  name: string;
+  login: string;
+} | undefined>  => { 
+  // return UsersDB.findOne(id)
+  const user = await  getRepository(User).findOne({id});
+  if(!user) throw new RequestError('Error: no user with such id', 404);
+   
+    return User.toResponse(user)
+  }
 
 /**
  * Adds the User to repository
  * @param data - user to be added.
  * @returns added user or error message (Promise)
  */
-//   export const addUser = async(data:IUser) => {
-//   const user = new User(data);
-//   if(!user) throw new RequestError('Error: can not create user', 404)
-//   db[0].push(user);
-//   return User.toResponse(user);
-// }
+  export const addUser = async(data:IUser):Promise<{
+    id: string;
+    name: string;
+    login: string;
+} | undefined> => {
+// const repository = getRepository(User)
+    const user =  await getRepository(User).save(data);
+  // const user = new User(data);
+  // if(!user) throw new RequestError('Error: can not create user', 401)
+  // db[0].push(user);
+  // await repository.save(user);
+  return User.toResponse(user);
+}
 
 /**
  * Update the User in repository

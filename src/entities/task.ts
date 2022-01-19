@@ -30,5 +30,5 @@ export class Task {
   @TypeColumn('uuid', { name: 'columnIdId', nullable: true })
   columnId: string;
 
-  //static toResponse = (task?: Partial<Task>): Partial<Task> | undefined => task;
+  // static toResponse = (task?: Partial<Task>): Partial<Task> | undefined => task;
 }
