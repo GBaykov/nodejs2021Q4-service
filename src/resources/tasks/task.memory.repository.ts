@@ -1,11 +1,11 @@
 import { getRepository } from 'typeorm';
-////import db from '../../db/db';
+/// /import db from '../../db/db';
 import { Task } from '../../entities';
 import { RequestError } from '../../logger/errorHandler';
-//import { ITask } from '../../types';
-//import Task from './task.model';
+// import { ITask } from '../../types';
+// import Task from './task.model';
 
-//const taskDB = db[2];
+// const taskDB = db[2];
 
 /**
  * Returns all Tasks on bord (Promise)
@@ -22,7 +22,7 @@ export const getAll = async (boardId:string) => {
   // if(!allTasks) throw new RequestError("Error in getAll: no tasks", 404)
   // return allTasks;
 
-    //if( !id) throw new RequestError('NOO BOARDID  ID', 404) 
+    // if( !id) throw new RequestError('NOO BOARDID  ID', 404) 
  // const Tasks : Task[] = await taskRepository.find({ where: { boardId } });
   // return Tasks;
   // const tasks =  allTasks.filter(task => task.boardId === boardId);
@@ -58,9 +58,9 @@ export const getTask = async(id:string, boardId:string) => {
   export const addTask = async(data:Task, boardId:string ) => {
     const task = await  getRepository(Task).save(data);
     if(!task) throw new RequestError("Error in addTask: error while adding new task", 404)
-  //const task = new Task(data); 
+  // const task = new Task(data); 
   task.boardId = boardId;
-  //taskDB.push(task);
+  // taskDB.push(task);
   return task;
 }
 
@@ -74,7 +74,7 @@ export const getTask = async(id:string, boardId:string) => {
 export const updateTask = async(id:string, data:Task, boardId:string ) => {
   const task = await getRepository(Task).findOne( {id} );
 console.log("update DATA", data)
-  //const task = await taskDB.find((item) => item.id === id && item.boardId === boardId);
+  // const task = await taskDB.find((item) => item.id === id && item.boardId === boardId);
   if(!task) throw new RequestError("Error in updateTask: no task with such id or boardId", 404);
   task.title = data.title;
   task.userId = data.userId;
@@ -83,8 +83,8 @@ console.log("update DATA", data)
   task.columnId = data.columnId;
   const updatedTask = await getRepository(Task).update(id, data);
   return updatedTask;
-  //await getRepository(Task).save(task)
-  //console.log('updateTask', task)
+  // await getRepository(Task).save(task)
+  // console.log('updateTask', task)
   // taskDB.splice(index, 1, newTask);
   // if(!task && !newTask && index === -1) throw new RequestError("Error: error while updeting task", 404);
   return task;
@@ -100,7 +100,7 @@ export const deleteTask = async(id:string) => {
   // const index = await taskDB.findIndex(item => item.id === id);
   // if(!index) throw new RequestError("Error in deleteTask: no task with such id", 404);
   // taskDB.splice(index, 1);
-  //return 202
+  // return 202
 }
 
 

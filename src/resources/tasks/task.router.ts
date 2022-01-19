@@ -10,7 +10,7 @@ router.route('/:boardId/tasks/').get(async (req:Request, res:Response, next:Next
   try{
     
     const  {boardId} = req.params;
-    //console.log(boardId)
+    // console.log(boardId)
     const tasks = await tasksRepo.getAll(boardId);
     if(!boardId || !tasks) throw new RequestError('NOO BOARDID or TASKS', 404)
     res.json(tasks);
@@ -24,7 +24,7 @@ router
   .get('/:boardId/tasks/:id', async (req:Request, res:Response, next:NextFunction) => {
     try{
     const { id, boardId } = req.params;
-    //console.log(id, boardId)
+    // console.log(id, boardId)
     const task = await tasksRepo.getTask(id, boardId);
     if(!boardId || !task || !id) throw new RequestError('NOO BOARDID or TASKS or ID', 404)
     res.status(200).json(task);
@@ -47,7 +47,7 @@ router
   .put('/:boardId/tasks/:id', async (req:Request, res:Response, next:NextFunction) => {
     try{
     const { id, boardId } = req.params;
-    //console.log(id, boardId)
+    // console.log(id, boardId)
     if(!boardId ) throw new RequestError('NOO BOARDID ', 404)
     if( !id) throw new RequestError('NOO BOARDID  ID', 404)
     const task = await tasksRepo.updateTask(id, req.body, boardId);

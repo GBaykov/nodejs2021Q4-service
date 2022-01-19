@@ -1,4 +1,4 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
+
 import { Entity, Column as TypeColumn, PrimaryGeneratedColumn, OneToMany } from 'typeorm';
 import { Column } from './column';
 import { Task } from './task';
@@ -20,7 +20,4 @@ export class Board {
   @OneToMany<Task>((_type) => Task, (task: Task): string => task.boardId as string, { cascade: true })
   tasks: Task[];
 
-  // static toResponse(board?: Partial<Board>): Partial<Board> | undefined {
-  //   return board;
-  // }
 }

@@ -1,7 +1,7 @@
 import express, {Router, Request, Response, NextFunction} from 'express';
-import * as boardsService from './bords.service';
+
 import * as boardsRepo from './bords.memory.repository';
-import getStatus from '../../utils/router.helpers';
+
 import { RequestError } from '../../logger/errorHandler';
 
 const router: Router = express.Router();
@@ -51,9 +51,7 @@ router
   .delete('/:id', async (req:Request, res:Response, next:NextFunction) => {
     try {
     const { id } = req.params;
-    //if(!id) throw new RequestError('Error from router: id is absent', 404);
     const result = await boardsRepo.deleteBoard(id);
-    //if(!result) throw new RequestError('Error from router: error while deleting board', 404);
     res.status(204).json(result)
     }catch(err){
       next(err)

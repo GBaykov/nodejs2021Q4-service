@@ -1,13 +1,9 @@
 import { getRepository } from 'typeorm';
 import {IUser} from '../../types';
-
-import db from '../../db/db';
-
-
 import { RequestError } from "../../logger/errorHandler";
 
 import { User } from '../../entities/user';
-import { Task } from '../../entities';
+
 
 /**
  * Returns all Users in the repo (Promise)
@@ -62,13 +58,7 @@ export const updateUser = async(id:string, data:IUser) => {
   user.name = data.name;
   user.password = data.password;
   await getRepository(User).save(user);
-  // const index = await db[0].findIndex(item => item.id === id);
-  // const newUser = new User(data);
-  // newUser.id = id;
-  // db[0].splice(index, 1, newUser);
-  //if(user && newUser && index !== -1) {
     return User.toResponse(user) 
-  //} throw new RequestError('Error: error while updeting user', 404);
 }
 
 /**
@@ -77,16 +67,11 @@ export const updateUser = async(id:string, data:IUser) => {
  * @returns status code (202) or error message (Promise)
  */
 export const deleteUser = async(id:string):Promise<void> => {
-  //const index = await db[0].findIndex(item => item.id === id);
-   //if(!id) throw new RequestError('Error: error while deleting user', 401);
-   //throw new RequestError('Error in deleteUser: no user with such id ', 404);
-   //await  getRepository(User).delete({id});
-   
    Boolean((await getRepository(User).delete(id)).affected);
-   //Boolean((await getRepository(Task).delete(id)).affected);
+   // Boolean((await getRepository(Task).delete(id)).affected);
    
-   //tasks = null;
-   //await getRepository(Task).save(tasks);
+   // tasks = null;
+   // await getRepository(Task).save(tasks);
   // db[0].splice(index, 1);
   // db[2].map((item) => {
   //   if(item.userId === id){
@@ -97,8 +82,8 @@ export const deleteUser = async(id:string):Promise<void> => {
   // });
   // if(index !== -1) {
   //   return 200
-  //}
-   //throw new RequestError('Error: error while deleting user', 404);
+  // }
+   // throw new RequestError('Error: error while deleting user', 404);
 }
 
 

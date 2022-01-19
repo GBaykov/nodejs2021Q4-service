@@ -1,12 +1,9 @@
-import db from '../../db/db';
-//import Board from './bords.model';
-import * as taskService from '../tasks/task.service';
-import { IBoard } from '../../types';
-import { RequestError } from '../../logger/errorHandler';
 import { getRepository } from 'typeorm';
+import db from '../../db/db';
+
+import { RequestError } from '../../logger/errorHandler';
 import { Board } from '../../entities';
 
-const boardsDB = db[1];
 
 /**
  * Returns all Boards in the repo (Promise)
@@ -37,8 +34,7 @@ export const getBoard = async(id:string) => {
 export const addBoard = async(data:Board) => {
   const board = await  getRepository(Board).save(data);
     if(!data.columns || !data.title) throw new RequestError('Error in addBoard: data.columns or data.title absent', 404); 
-  //const board = new Board(data);
-  //boardsDB.push(board);
+
   return board;
 }
 
@@ -54,11 +50,6 @@ export const updateBoard = async(id:string, data:Board) => {
   board.columns = await data.columns;
   board.title = await data.title;
   await getRepository(Board).save(board);
-  // const index = await boardsDB.findIndex(item => item.id === id);
-  // const newBoard = new Board(data);
-  // newBoard.id = id;
-  // boardsDB.splice(index, 1, newBoard);
-  // if(!board && !newBoard && index === -1) throw new RequestError('Error: error while updeting board', 404);
   return board;
 }
 
@@ -70,14 +61,4 @@ export const updateBoard = async(id:string, data:Board) => {
 export const deleteBoard = async(id:string) => {
   Boolean((await getRepository(Board).delete(id)).affected);
   
-//   const index = await boardsDB.findIndex(item => item.id === id);
-//   boardsDB.splice(index, 1);
-
-//   db[2].map((task) => {
-// if(task.boardId === id) {
-//    taskService.deleteTask(id)
-// }
-// return db[2];
-//   })
-//   return 202
 }

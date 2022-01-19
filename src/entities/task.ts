@@ -1,4 +1,4 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
+
 import { Entity, Column as TypeColumn, PrimaryGeneratedColumn, ManyToOne } from 'typeorm';
 import { User } from './user';
 import { Board } from './board';
@@ -30,5 +30,5 @@ export class Task {
   @TypeColumn('uuid', { name: 'columnIdId', nullable: true })
   columnId: string | null;
 
-  // static toResponse = (task?: Partial<Task>): Partial<Task> | undefined => task;
+
 }

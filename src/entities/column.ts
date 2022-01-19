@@ -1,4 +1,4 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
+
 import {
   Entity,
   Column as TypeColumn,
@@ -26,5 +26,5 @@ export class Column {
   @OneToMany<Task>((_type) => Task, (task: Task): string => task.columnId as string, { cascade: true })
   tasks: Task[];
 
-  // static toResponse = (column?: Partial<Column>): Partial<Column> | undefined => column;
+ 
 }
