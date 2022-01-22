@@ -12,7 +12,7 @@ const level:number = process.env.LOG_LVL !== undefined
                      && +process.env.LOG_LVL < 3 ?  
                      Number(process.env.LOG_LVL) : 2;
  
-const config = {
+export const config = {
   POSTGRES_PORT: process.env.POSTGRES_PORT,
   PORT: process.env.PORT,
   NODE_ENV: process.env.NODE_ENV,

@@ -37,10 +37,11 @@ app.use('/', (req:Request, res:Response, next:NextFunction) => {
   next();
 });
 
-app.use('/login', loginRouter);
+
 app.use('/users', userRouter);
 app.use('/boards', bordsRouter);
 app.use('/boards/', tasksRouter);
+app.use('/login', loginRouter);
 app.use(handleErrors);
 
 process.on('uncaughtException', (err) => {
