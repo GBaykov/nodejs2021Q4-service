@@ -5,9 +5,23 @@ import { getUser } from '../users/user.memory.repository';
 
 const JWT_SECRET_KEY:string |undefined | Secret | GetPublicKeyOrSecret = config.JWT_SECRET_KEY;
 
- const checkToken = async(req:Request,res:Response,next:NextFunction)=> {
-const tokenString = req.header('Authorization');
+const PATHS_WITHOUT_AUTH = ['/login', '/doc', '/'];
 
+export function checkUrl(req:Request,res:Response, next:NextFunction){
+    if(PATHS_WITHOUT_AUTH.includes(req.url)){
+      next()
+    } else{
+        checkToken(req, res, next)
+    }
+}
+// function checkUrl(req:Request,res:Response, next:NextFunction){
+//     if(PATHS_WITHOUT_AUTH.includes(req.url)) next()
+// }
+
+ const checkToken = async(req:Request,res:Response,next:NextFunction)=> {
+    if(!PATHS_WITHOUT_AUTH.includes(req.url)){
+ 
+const tokenString = req.header('Authorization');
 if(tokenString !== undefined) {
     const [type, token] = tokenString.split(' ');
     if(type !== 'Bearer') {
@@ -34,5 +48,10 @@ if(tokenString !== undefined) {
 } else {
     res.status(401).send('Unauthorized')
 }
+      } else {
+        console.log(req.url)
+        next()
+      }
+
 }
 export default checkToken;
