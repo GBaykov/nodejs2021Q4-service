@@ -7,6 +7,8 @@ import cors from 'cors';
 import userRouter from './resources/users/user.router';
 import tasksRouter from './resources/tasks/task.router';
 import bordsRouter from './resources/bords/bords.router';
+import loginRouter from './resources/login/login.router';
+
 import {logger, logging} from './logger/logger';
 import { LOG_LVL } from './common/config';
 import { handleErrors, loggingErrors } from './logger/errorHandler';
@@ -35,6 +37,7 @@ app.use('/', (req:Request, res:Response, next:NextFunction) => {
   next();
 });
 
+app.use('/login', loginRouter);
 app.use('/users', userRouter);
 app.use('/boards', bordsRouter);
 app.use('/boards/', tasksRouter);
