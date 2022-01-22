@@ -9,10 +9,8 @@ import { config } from '../../common/config';
 const JWT_SECRET_KEY:string |undefined | Secret = config.JWT_SECRET_KEY;
 
 export const getUserByProps = async(login:string, password:string):Promise< User| undefined >  => { 
-    console.log(login,password)
     const user = await  getRepository(User).findOne({login, password});
-    console.log("user",user)
-    if(!user) throw new RequestError('Error: no user with such login/password', 404);
+    //if(!user) throw new RequestError('Error: no user with such login/password', 404);
       return user;
     };
 
