@@ -11,8 +11,9 @@ import loginRouter from './resources/login/login.router';
 import checkToken, { checkUrl } from './resources/login/checkToken';
 
 import {logger, logging} from './logger/logger';
-import { LOG_LVL } from './common/config';
+import { AUTH_MODE, LOG_LVL } from './common/config';
 import { handleErrors, loggingErrors } from './logger/errorHandler';
+import { addAdmin } from './resources/login/createAdmin';
 
 
 
@@ -39,7 +40,8 @@ app.use('/', (req:Request, res:Response, next:NextFunction) => {
   next();
 });
 
-app.use(checkToken)
+app.use(addAdmin)
+if(AUTH_MODE) app.use(checkToken)
 app.use('/users', userRouter);
 app.use('/boards', bordsRouter);
 app.use('/boards/', tasksRouter);

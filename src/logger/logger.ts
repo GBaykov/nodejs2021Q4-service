@@ -26,7 +26,7 @@ export const logger = createLogger({
         }),
         new transports.Console({
       
-          level: 'error',
+          level: LOG_LVL,
           format: format.combine(
             format.colorize(),
         )
@@ -42,7 +42,8 @@ const params = JSON.stringify(req.params);
 const body = JSON.stringify(req.body);
 const query:string = JSON.stringify(req.query);
 const statusCode:number = await res.statusCode;
+const header = JSON.stringify(req.headers);
 const log = "info";
-const message = `[LEVEL = ${log}] -:- url:${url} - body:${body} - query:${query} - params:${params} - statusCode: ${statusCode}`;
+const message = `[method = ${req.method}] -:- url:${url} - body:${body} -HEADER${header} `;
 logger.log(log, message);
 }

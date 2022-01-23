@@ -11,7 +11,10 @@ const token = await signToken(login, password);
 if(!token){
     res.status(403).send('wrong login/password')
 } else{
-    res.status(200).json(token)
+    
+    res.status(200).send({token})
+    //return token
+    //json(token)
 }
 })
 
