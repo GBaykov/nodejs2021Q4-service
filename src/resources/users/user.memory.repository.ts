@@ -3,6 +3,7 @@ import {IUser} from '../../types';
 import { RequestError } from "../../logger/errorHandler";
 
 import { User } from '../../entities/user';
+import { encryptPassword } from '../../utils/hash.helpers';
 
 
 /**
@@ -20,15 +21,16 @@ export const getAll = async ():Promise<User[]> =>  {
  * @param id - id of user for search.
  * @returns user or error message (Promise)
  */
-export const getUser = async(id:string):Promise<{
-  id: string;
-  name: string;
-  login: string;
-} | undefined>  => { 
+export const getUser = async(id:string)  => { 
   const user = await  getRepository(User).findOne({id});
   if(!user) throw new RequestError('Error: no user with such id', 404);
-    return User.toResponse(user);
+    //return User.toResponse(user);
+    return user
   };
+
+
+  export const prepareUser = async (user: User): Promise<User> => ({
+   ...user, password: await encryptPassword(user.password), });
 
 /**
  * Adds the User to repository
@@ -40,7 +42,8 @@ export const getUser = async(id:string):Promise<{
     name: string;
     login: string;
 } | undefined> => {
-    const user =  await getRepository(User).save(data);
+
+    const user = await getRepository(User).save(await prepareUser(getRepository(User).create(data)));
    if(!user) throw new RequestError('Error: can not create user', 401)
   return User.toResponse(user);
 }
@@ -51,13 +54,13 @@ export const getUser = async(id:string):Promise<{
  * @param data - new data for updating user
  * @returns updated user or error message (Promise)
  */
-export const updateUser = async(id:string, data:IUser) => {
+export const updateUser = async(id:string, data:User) => {
   const user = await  getRepository(User).findOne({id});
   if(!user) throw new RequestError('Error in updateUser: no user with such id', 404);
   user.login = data.login;
   user.name = data.name;
   user.password = data.password;
-  await getRepository(User).save(user);
+  await getRepository(User).save(await prepareUser(user));
     return User.toResponse(user) 
 }
 

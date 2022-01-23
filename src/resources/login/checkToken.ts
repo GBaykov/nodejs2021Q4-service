@@ -1,6 +1,7 @@
 import express, {Router, Request, Response, NextFunction} from 'express';
 import Jwt, {GetPublicKeyOrSecret, JwtPayload, Secret} from 'jsonwebtoken';
 import { config } from '../../common/config';
+import { checkHashPassword } from '../../utils/hash.helpers';
 import { getUser } from '../users/user.memory.repository';
 
 const JWT_SECRET_KEY:string |undefined | Secret | GetPublicKeyOrSecret = config.JWT_SECRET_KEY;
@@ -31,6 +32,7 @@ if(tokenString !== undefined) {
         try{
             const res:string | JwtPayload = <JwtPayload>Jwt.verify(token, JWT_SECRET_KEY); //<JwtPayload>
             const user = await getUser(res.id);
+            
             if(!user || user?.login !== res.login) {
                 console.log('resID',res.id, 'resLogin',res.login,  )
                 throw new Error()

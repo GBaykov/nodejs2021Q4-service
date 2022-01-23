@@ -28,7 +28,7 @@ router
       const { id } = req.params;
     const user = await usersRepo.getUser(id);
     if (!user || !id) throw new Error("NOO users or id");
-    res.status(200).json(user);
+    res.status(200).json(User.toResponse(user));
     }catch(err){
       next(err)
     }  

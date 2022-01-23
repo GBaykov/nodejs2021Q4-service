@@ -15,7 +15,7 @@ export class User {
   login: string;
 
   @Column('varchar', { length: 100 })
-  password?: string;
+  password: string;
 
   @OneToMany<Task>((_type) => Task, (task: Task): string => task.userId as string, { cascade: true })
   tasks: Task[];
