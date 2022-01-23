@@ -13,8 +13,8 @@ if(!token){
 } else{
     
     res.status(200).send({token})
-    //return token
-    //json(token)
+    // return token
+    // json(token)
 }
 })
 

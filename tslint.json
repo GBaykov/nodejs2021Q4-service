@@ -6,6 +6,7 @@
     "jsRules": {},
     "rules": {
     "no-console": false,
+    "allowElseIf": true,
     "@typescript-eslint/no-explicit-any": true,
     "no-explicit-any": true
     },

@@ -20,9 +20,9 @@ export const config = {
   JWT_SECRET_KEY: process.env.JWT_SECRET_KEY,
   AUTH_MODE: process.env.AUTH_MODE === 'true'
 };
-export const AUTH_MODE = process.env.AUTH_MODE;
+export const {AUTH_MODE} = process.env;
 export const LOG_LVL = levels[level]
-export const JWT_SECRET_KEY = process.env.JWT_SECRET_KEY;
+export const {JWT_SECRET_KEY} = process.env;
 export const {PORT} = process.env;
 export const {POSTGRES_HOST,POSTGRES_PORT,POSTGRES_USER,POSTGRES_PASSWORD,POSTGRES_DB, POSTGRES_CONTAINERPORT} = process.env
  

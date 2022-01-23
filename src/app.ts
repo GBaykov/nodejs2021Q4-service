@@ -8,7 +8,7 @@ import userRouter from './resources/users/user.router';
 import tasksRouter from './resources/tasks/task.router';
 import bordsRouter from './resources/bords/bords.router';
 import loginRouter from './resources/login/login.router';
-import checkToken, { checkUrl } from './resources/login/checkToken';
+import checkToken from './resources/login/checkToken';
 
 import {logger, logging} from './logger/logger';
 import { AUTH_MODE, LOG_LVL } from './common/config';
@@ -35,7 +35,7 @@ app.use('/', (req:Request, res:Response, next:NextFunction) => {
 
 
 app.use('/', (req:Request, res:Response, next:NextFunction) => {
-  //checkUrl(req, res, next);
+  // checkUrl(req, res, next);
   logging(req, res, next);
   next();
 });

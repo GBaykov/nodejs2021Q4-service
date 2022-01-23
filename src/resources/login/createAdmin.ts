@@ -1,9 +1,9 @@
 import { getRepository } from 'typeorm';
+import {v4 as uuid} from 'uuid'
+import express, {Router, Request, Response, NextFunction} from 'express';
 import {IUser} from '../../types';
 import { RequestError } from "../../logger/errorHandler";
-import {v4 as uuid} from 'uuid'
 import { User } from '../../entities/user';
-import express, {Router, Request, Response, NextFunction} from 'express';
 import { getUserByProps } from './login.orm.repository';
 import { prepareUser } from '../users/user.memory.repository';
 
@@ -23,5 +23,5 @@ export const addAdmin = async(req:Request,res:Response, next:NextFunction) => {
             next()  
         }
       
-  //return User.toResponse(user);
+  // return User.toResponse(user);
 }

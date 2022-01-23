@@ -24,7 +24,7 @@ export const getAll = async ():Promise<User[]> =>  {
 export const getUser = async(id:string)  => { 
   const user = await  getRepository(User).findOne({id});
   if(!user) throw new RequestError('Error: no user with such id', 404);
-    //return User.toResponse(user);
+    // return User.toResponse(user);
     return user
   };
 

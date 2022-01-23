@@ -2,8 +2,8 @@
 import {Request,Response, NextFunction} from 'express';
 
 import winston, {createLogger, format, transports} from 'winston';
-import { LOG_LVL } from '../common/config';
 import appRoot from 'app-root-path';
+import { LOG_LVL } from '../common/config';
 
 
 export const logger = createLogger({
@@ -45,7 +45,7 @@ const query:string = JSON.stringify(req.query);
 const statusCode:number = await res.statusCode;
 const header = JSON.stringify(req.headers);
 const log = "info";
-//console.log(JSON.stringify(appRoot))
+// console.log(JSON.stringify(appRoot))
 const message = `[method = ${req.method}] -:- url:${url} - body:${body} -HEADER${header} `;
 logger.log(log, message);
 }
