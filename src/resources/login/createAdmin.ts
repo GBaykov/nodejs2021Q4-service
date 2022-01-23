@@ -8,7 +8,7 @@ import { getUserByProps } from './login.orm.repository';
 
 export const addAdmin = async(req:Request,res:Response, next:NextFunction) => {
    
-        const isAdmin = getUserByProps("admin", "admin")
+        const isAdmin = await getUserByProps("admin", "admin")
         if(!isAdmin) {
             const user:IUser = {    
                 id:uuid(),

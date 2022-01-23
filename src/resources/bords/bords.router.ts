@@ -20,8 +20,9 @@ router
   .get('/:id', async (req:Request, res:Response, next:NextFunction) => {
     try {
     const { id } = req.params;
-    
     const board = await boardsRepo.getBoard(id);
+    console.log('boardID', id)
+    console.log('board', board)
     if(!id || !board) throw new RequestError(' NOOOOOO ID or BOARD',404)
     res.status(200).json(board)
     }catch(err){
