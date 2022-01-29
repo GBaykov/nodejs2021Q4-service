@@ -3,7 +3,6 @@ import YAML = require("yamljs")
 import swaggerUI, {SwaggerUiOptions} from 'swagger-ui-express'
 import path from 'path';
 import cors from 'cors';
-
 import userRouter from './resources/users/user.router';
 import tasksRouter from './resources/tasks/task.router';
 import bordsRouter from './resources/bords/bords.router';
