@@ -27,12 +27,16 @@ return users.map(User.toResponse);
     return User.toResponse(user);
   }
 
-  async update(id: number, updateUserDto: UpdateUserDto) {
-    const user =  await this.usersRepository.update(id,updateUserDto);
-    return user;
+  async update(id: number | string, updateUserDto: UpdateUserDto) {
+    const user =  await this.usersRepository.findOne(id);
+    user.login = updateUserDto.login;
+  user.name = updateUserDto.name;
+  user.password = updateUserDto.password;
+  await this.usersRepository.save(user);
+    return User.toResponse(user) 
   }
 
-  async remove(id: number) {
+  async remove(id: number | string) {
     await this.usersRepository.delete(id);
   }
 }
