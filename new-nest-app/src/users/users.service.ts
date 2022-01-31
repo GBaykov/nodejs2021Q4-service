@@ -37,6 +37,6 @@ return users.map(User.toResponse);
   }
 
   async remove(id: number | string) {
-    await this.usersRepository.delete(id);
+    Boolean((await this.usersRepository.delete(id)).affected);
   }
 }
