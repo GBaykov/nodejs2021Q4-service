@@ -1,3 +1,4 @@
+import { Task } from 'src/tasks/entities/task.entity';
 import {
   Entity,
   Column as TypeColumn,
@@ -22,8 +23,7 @@ export class Column {
   @TypeColumn('int')
   order: number;
 
-  // @OneToMany<Task>((_type) => Task, (task: Task): string => task.columnId as string, { cascade: true })
-  // tasks: Task[];
+  @OneToMany<Task>((_type) => Task, (task: Task): string => task.columnId as string, { cascade: true })
+  tasks: Task[];
 
- 
 }

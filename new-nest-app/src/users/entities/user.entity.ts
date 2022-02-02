@@ -1,3 +1,4 @@
+import { Task } from 'src/tasks/entities/task.entity';
 import { Entity, Column, PrimaryGeneratedColumn, OneToMany } from 'typeorm';
 
 @Entity()
@@ -14,8 +15,8 @@ export class User {
   @Column('varchar', { length: 100 })
   password: string;
 
-//   @OneToMany<Task>((_type) => Task, (task: Task): string => task.userId as string, { cascade: true })
-//   tasks: Task[];
+  @OneToMany<Task>((_type) => Task, (task: Task): string => task.userId as string, { cascade: true })
+  tasks: Task[];
 
   static toResponse(user?:  User){
     if (!user) return undefined;

@@ -1,3 +1,4 @@
+import { Task } from "src/tasks/entities/task.entity";
 import { Entity, Column as TypeColumn, PrimaryGeneratedColumn, OneToMany, } from "typeorm";
 import { Column } from "./column.entity";
 
@@ -17,8 +18,8 @@ export class Board {
     })
     columns: Column[];
   
-    // @OneToMany<Task>((_type) => Task, (task: Task): string => task.boardId as string, { cascade: true })
-    // tasks: Task[];
+    @OneToMany<Task>((_type) => Task, (task: Task): string => task.boardId as string, { cascade: true })
+    tasks: Task[];
   
   }
   

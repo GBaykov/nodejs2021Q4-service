@@ -9,6 +9,8 @@ import { User } from './users/entities/user.entity';
 import { BoardsModule } from './boards/boards.module';
 import { Column } from './boards/entities/column.entity';
 import { Board } from './boards/entities/board.entity';
+import { TasksModule } from './tasks/tasks.module';
+import { Task } from './tasks/entities/task.entity';
 
 @Module({
   imports: [
@@ -21,11 +23,12 @@ import { Board } from './boards/entities/board.entity';
       username: 'admin',
       password: 'admin',
       database: 'postgres',
-      entities: [User, Column, Board],
+      entities: [User, Column, Board, Task],
       synchronize: true,
     }),
     UsersModule,
     BoardsModule,
+    TasksModule,
   ],
   controllers: [AppController],
   providers: [AppService],
