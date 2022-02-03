@@ -64,8 +64,8 @@
     "typeorm": "^0.2.41",
     "uuid": "8.3.2",
     "winston": "^3.3.3",
-    "yamljs": "0.3.0"
-  },
+    "yamljs": "0.3.0" 
+  }, 
   "devDependencies": {
     "@babel/eslint-parser": "^7.16.3",
     "@types/app-root-path": "^1.2.4",

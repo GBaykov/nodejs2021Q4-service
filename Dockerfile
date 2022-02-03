@@ -12,4 +12,4 @@ RUN npm install
 #перенос содержимого папки приложения в папку контейнера 
 COPY . .
 
-CMD ["npm", "run", "start"]
+CMD ["npm", "run", "start:dev"]

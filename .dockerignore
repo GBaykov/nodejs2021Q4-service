@@ -2,6 +2,11 @@
 .git
 .vscode
 node_modules
+/node_modules
+.node_modules
 dist
 old-app
 /old-app
+new-nest-app
+/new-nest-app
+.new-nest-app
