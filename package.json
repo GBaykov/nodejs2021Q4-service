@@ -1,8 +1,13 @@
 {
   "name": "new-nest-app",
-  "version": "0.0.1",
+  "version": "1.0.0",
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
   "description": "",
-  "author": "",
+  "type": "commonjs",
+  "author": "Bykov Gleb",
   "private": true,
   "scripts": {
     "prebuild": "rimraf dist",

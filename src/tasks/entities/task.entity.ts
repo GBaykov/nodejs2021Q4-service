@@ -1,8 +1,8 @@
 
-import { Board } from 'src/boards/entities/board.entity';
-import { Column } from 'src/boards/entities/column.entity';
-import { User } from 'src/users/entities/user.entity';
 import { Entity, Column as TypeColumn, PrimaryGeneratedColumn, ManyToOne,JoinColumn,Index } from 'typeorm';
+import { Board } from '../../boards/entities/board.entity';
+import { Column } from '../../boards/entities/column.entity';
+import { User } from '../../users/entities/user.entity';
 
 @Entity()
 export class Task {

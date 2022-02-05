@@ -1,5 +1,5 @@
 import { Controller, Get, Post, Body, Patch, Param, Delete, Put,HttpCode,HttpStatus, UseGuards } from '@nestjs/common';
-import { JwtAuthGuard } from 'src/auth/jwt-auth.guard';
+import { JwtAuthGuard } from '../auth/jwt-auth.guard';
 import { BoardsService } from './boards.service';
 import { CreateBoardDto } from './dto/create-board.dto';
 import { UpdateBoardDto } from './dto/update-board.dto';
@@ -38,7 +38,7 @@ export class BoardsController {
   @HttpCode(HttpStatus.NO_CONTENT)
   async remove(
     @Param('id') id: string) {
-      //await this.tasksService.remove(id);
+      // await this.tasksService.remove(id);
       await this.boardsService.remove(id);
   }
 }

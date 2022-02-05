@@ -19,10 +19,13 @@ return users.map(User.toResponse);
   }
 
   async findByLogin(login:  string) {
-    if(!login) throw new NotFoundException(`NOOOO login ${login} in findByLogin`)
-    const user = await this.usersRepository.findOne(login);
-    if(!user) throw new NotFoundException(`can not finnd user by login ${login} in findByLogin`)
-    return user
+    const user = await this.usersRepository.findOne({ login });
+
+    if (!user) {
+      return null;
+    }
+
+    return user;
   }
   
   async findOne(id: number | string) {

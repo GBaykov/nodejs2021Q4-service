@@ -5,6 +5,10 @@
     ],
     "jsRules": {},
     "rules": {
+        "import/no-unresolved": [
+            2,
+            { "caseSensitive": false }
+         ],
     "no-console": false,
     "allowElseIf": true,
     "@typescript-eslint/no-explicit-any": true,

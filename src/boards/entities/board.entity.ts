@@ -1,5 +1,5 @@
-import { Task } from "src/tasks/entities/task.entity";
 import { Entity, Column as TypeColumn, PrimaryGeneratedColumn, OneToMany, } from "typeorm";
+import { Task } from "../../tasks/entities/task.entity";
 import { Column } from "./column.entity";
 
 

@@ -1,5 +1,4 @@
-import { NotFoundException } from '@nestjs/common';
-import { Injectable } from '@nestjs/common';
+import { NotFoundException , Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { CreateTaskDto } from './dto/create-task.dto';
@@ -45,8 +44,8 @@ export class TasksService {
     task.title = updateTaskDto.title;
     task.userId = updateTaskDto.userId;
     await this.tasksRepository.save(task)
-    //const task = await this.tasksRepository.save(id, updateTaskDto);
-    //await this.tasksRepository.save(task)
+    // const task = await this.tasksRepository.save(id, updateTaskDto);
+    // await this.tasksRepository.save(task)
     return task;
   }
 

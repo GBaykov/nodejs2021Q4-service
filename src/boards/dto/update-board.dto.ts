@@ -4,5 +4,6 @@ import {  CreateBoardDto } from './create-board.dto';
 
 export class UpdateBoardDto extends PartialType(CreateBoardDto) {
     title?: string;
+
     columns?: Column[] | null;
 }

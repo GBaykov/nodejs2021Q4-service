@@ -6,16 +6,26 @@
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "allowSyntheticDefaultImports": true,
-    "target": "es2017",
+    "target": "es2020", 
     "sourceMap": true,
-    "outDir": "./dist",
+    "outDir": "./dist",                              /* Redirect output structure to the directory. */
+    "rootDir": "./src",
     "baseUrl": "./",
+    "strict": true,                                 /* Enable all strict type-checking options. */
+    "noImplicitAny": true,  
     "incremental": true,
     "skipLibCheck": true,
     "strictNullChecks": false,
-    "noImplicitAny": false,
+    "strictPropertyInitialization": false,  
+    "moduleResolution": "node",  
+    "typeRoots": [
+      "node_modules/@types",
+      "node_modules/express-body",
+      "src/typings"
+    ], 
+    "esModuleInterop": true,    
+    "forceConsistentCasingInFileNames": true, 
     "strictBindCallApply": false,
-    "forceConsistentCasingInFileNames": false,
     "noFallthroughCasesInSwitch": false
   }
 }
