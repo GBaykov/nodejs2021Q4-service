@@ -17,6 +17,11 @@ export class UsersService {
 return users.map(User.toResponse);
   }
 
+  async findByLogin(login:  string) {
+    const user = await this.usersRepository.findOne(login);
+    return user
+  }
+
   async findOne(id: number | string) {
     const user = await this.usersRepository.findOne(id);
     return User.toResponse(user);
