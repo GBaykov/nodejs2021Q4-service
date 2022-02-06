@@ -36,7 +36,8 @@
     "plugin:@typescript-eslint/recommended"
   ],
   "rules": {
-   
+    "class-methods-use-this": "off",
+   "no-useless-constructor": "off",
     "@typescript-eslint/no-explicit-any": 2,
     "@typescript-eslint/no-var-requires": 0,
     "import/extensions": "off",
