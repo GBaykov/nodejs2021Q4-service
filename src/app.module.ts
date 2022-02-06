@@ -12,6 +12,7 @@ import { Board } from './boards/entities/board.entity';
 import { TasksModule } from './tasks/tasks.module';
 import { Task } from './tasks/entities/task.entity';
 import { AuthModule } from './auth/auth.module';
+import { FileModule } from './file/file.module';
 
 @Module({
   imports: [
@@ -31,6 +32,7 @@ import { AuthModule } from './auth/auth.module';
     BoardsModule,
     TasksModule,
     AuthModule,
+    FileModule
   ],
   controllers: [AppController],
   providers: [AppService],
