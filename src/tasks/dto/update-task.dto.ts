@@ -2,15 +2,15 @@ import { PartialType } from '@nestjs/mapped-types';
 import { CreateTaskDto } from './create-task.dto';
 
 export class UpdateTaskDto extends PartialType(CreateTaskDto) {
-    title?: string
+    // title?: string
   
-    order?: number
+    // order?: number
 
-    description?: string
+    // description?: string
 
-    userId?: string | null
+    // userId?: string | null
 
-    boardId?: string | null
+    // boardId?: string | null
 
-    columnId?: string | null;
+    // columnId?: string | null;
 }

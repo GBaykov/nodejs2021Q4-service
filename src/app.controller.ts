@@ -15,6 +15,11 @@ export class AppController {
     return this.appService.getHello();
   }
 
+  @Get()
+  createAdmin(){
+    return this.authService.createAdmin()
+  }
+
   @UseGuards(LocalAuthGuard)
   @Post('login')
   async login(@Body() loginUser:LoginUserDto ) {

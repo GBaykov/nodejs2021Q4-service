@@ -3,7 +3,7 @@ import { Column } from '../entities/column.entity';
 import {  CreateBoardDto } from './create-board.dto';
 
 export class UpdateBoardDto extends PartialType(CreateBoardDto) {
-    title?: string;
+    // title?: string;
 
-    columns?: Column[] | null;
+    // columns?: Column[] | null;
 }

@@ -3,10 +3,10 @@ import { CreateUserDto } from './create-user.dto';
 
 export class UpdateUserDto extends PartialType(CreateUserDto) {
 
-    name?: string;
+    // name: string;
   
-    login?: string;
+    // login: string;
   
-    password?: string;
+    // password: string;
   
   }
