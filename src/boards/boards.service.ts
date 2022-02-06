@@ -36,7 +36,7 @@ export class BoardsService {
    // const board = await this.boardsRepository.update(id, updateBoardDto);
    const board = await this.boardsRepository.findOne(id);
    if (!board) {
-    throw new NotFoundException(`Board with id ${id} not found`);
+    return undefined
   }
   //  const updatedBoard = { ...board, ...updateBoardDto };
 

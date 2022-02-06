@@ -1,4 +1,4 @@
-import { Controller, Get, Post, Body, Patch, Param, Delete, Put,HttpCode,HttpStatus, UseGuards } from '@nestjs/common';
+import { Controller, Get, Post, Body, Patch, Param, Delete, Put,HttpCode,HttpStatus, UseGuards, NotFoundException } from '@nestjs/common';
 import { JwtAuthGuard } from '../auth/jwt-auth.guard';
 import { BoardsService } from './boards.service';
 import { CreateBoardDto } from './dto/create-board.dto';
@@ -22,23 +22,26 @@ export class BoardsController {
   }
 
   @Get(':id')
-  findOne(
+   findOne(
     @Param('id') id: string) {
-    return this.boardsService.findOne(id);
+    const board =  this.boardsService.findOne(id);
+    if(!board)  throw new NotFoundException(`Board with id ${id} not found`);
+    return board;
   }
 
   @Put(':id')
   update(
     @Param('id') id: string, 
     @Body() updateBoardDto: UpdateBoardDto) {
-    return this.boardsService.update(id, updateBoardDto);
+      const board = this.boardsService.update(id, updateBoardDto);
+      if(!board)  throw new NotFoundException(`Board with id ${id} not found`);
+    return board;
   }
 
   @Delete(':id')
   @HttpCode(HttpStatus.NO_CONTENT)
   async remove(
     @Param('id') id: string) {
-      // await this.tasksService.remove(id);
       await this.boardsService.remove(id);
   }
 }

@@ -1,4 +1,4 @@
-import { Controller, Get, Post, Body, Patch, Param, Delete, Put, HttpCode,HttpStatus, UseGuards  } from '@nestjs/common';
+import { Controller, Get, Post, Body, Patch, Param, Delete, Put, HttpCode,HttpStatus, UseGuards, NotFoundException  } from '@nestjs/common';
 import { JwtAuthGuard } from '../auth/jwt-auth.guard';
 import { UsersService } from './users.service';
 import { CreateUserDto } from './dto/create-user.dto';
@@ -23,18 +23,24 @@ export class UsersController {
 
   @Get(':id')
   findOne(@Param('id') id: string) {
-    return this.usersService.findOne(id);
+    const user = this.usersService.findOne(id);
+    if(!user) throw new NotFoundException(`user with id ${id} not found`)
+    return user;
   }
 
   @Put(':id')
   update(@Param('id') id: string, @Body() updateUserDto: UpdateUserDto) {
     const user = this.usersService.update(id, updateUserDto);
+    if(!user) throw new NotFoundException(`user with id ${id} not found`)
     return user;
+    
   }
 
   @Delete(':id')
   @HttpCode(HttpStatus.NO_CONTENT)
   remove(@Param('id') id: string) {
-    return this.usersService.remove(id);
+    const user =  this.usersService.remove(id);
+    if(!user) throw new NotFoundException(`user with id ${id} not found`)
+    return user;
   }
 }

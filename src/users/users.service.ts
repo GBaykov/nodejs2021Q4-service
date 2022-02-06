@@ -30,6 +30,7 @@ return users.map(User.toResponse);
   
   async findOne(id: number | string) {
     const user = await this.usersRepository.findOne(id);
+    if(!user) return undefined
     return User.toResponse(user);
   }
   
@@ -40,6 +41,7 @@ return users.map(User.toResponse);
 
   async update(id: number | string, updateUserDto: UpdateUserDto) {
     const user =  await this.usersRepository.findOne(id);
+    if(!user) return undefined
     user.login = updateUserDto.login;
   user.name = updateUserDto.name;
   user.password = updateUserDto.password;
