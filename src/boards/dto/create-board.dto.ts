@@ -4,8 +4,8 @@ import { Column } from '../entities/column.entity';
 
 export class CreateBoardDto {
 
-  @IsString()
   @IsNotEmpty()
+  @IsString()
   title: string;
 
   @IsOptional()
