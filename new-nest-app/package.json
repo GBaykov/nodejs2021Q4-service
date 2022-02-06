@@ -1,5 +1,0 @@
-{
-  "dependencies": {
-    "@nestjs/jwt": "^8.0.0"
-  }
-}
