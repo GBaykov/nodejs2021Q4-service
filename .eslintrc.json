@@ -36,6 +36,7 @@
     "plugin:@typescript-eslint/recommended"
   ],
   "rules": {
+    "no-empty-function": "off",
     "class-methods-use-this": "off",
    "no-useless-constructor": "off",
     "@typescript-eslint/no-explicit-any": 2,

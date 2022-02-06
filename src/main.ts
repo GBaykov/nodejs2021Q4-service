@@ -1,8 +1,8 @@
 import { ValidationPipe } from '@nestjs/common';
 import { NestFactory } from '@nestjs/core';
 import { FastifyAdapter, NestFastifyApplication } from '@nestjs/platform-fastify';
+import fmp from 'fastify-multipart';
 import { AppModule } from './app.module';
-import fastifyMp from 'fastify-multipart';
 import { PORT, USE_FASTIFY } from './common/config';
 
 async function bootstrap() {
@@ -17,7 +17,7 @@ async function bootstrap() {
       AppModule,
       new FastifyAdapter({ logger: true }),
     );
-    app.register(fastifyMp);
+    // app.register(fmp);
   } else {
     console.log('Application app is running on Express');
     app = await NestFactory.create(AppModule, {

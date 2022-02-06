@@ -1,31 +1,38 @@
-import { Controller, Get, Post, Body, Patch, Param, Delete, Put, HttpCode,HttpStatus, UseGuards, NotFoundException  } from '@nestjs/common';
+import {
+  Controller,
+  Get,
+  Param,
+  Post,
+  Req,
+  Res,
+  UseFilters,
+} from '@nestjs/common';
+import { FastifyRequest, FastifyReply } from 'fastify';
+import { USE_FASTIFY } from '../common/config';
 import { JwtAuthGuard } from '../auth/jwt-auth.guard';
 import { FileService } from './file.service';
 
 
 
-//@UseGuards(JwtAuthGuard)
+// @UseGuards(JwtAuthGuard)
 @Controller('file')
 export class FileController {
   constructor(private readonly fileService: FileService) {}
 
   @Post()
-  @HttpCode(HttpStatus.CREATED)
-  create() {
-    return 
+  async uploadFile(
+    @Req() req: Request | FastifyRequest,
+    @Res() res: Response | FastifyReply,
+  ) {
+    if (USE_FASTIFY === 'true') {
+      return this.fileService.uploadByFastify(req as FastifyRequest,res as FastifyReply);
+    } 
+      return this.fileService.uploadByExpress(req as Request,res as Response);
+    
   }
 
   @Get(':filename')
-  findOne(@Param('filename') id: string) {
-  
+  download(@Param('filename') filename: string) {
+    return this.fileService.download(filename);
   }
-
-
-  // @Delete(':id')
-  // @HttpCode(HttpStatus.NO_CONTENT)
-  // remove(@Param('id') id: string) {
-  //   const user =  this.usersService.remove(id);
-  //   if(!user) throw new NotFoundException(`user with id ${id} not found`)
-  //   return user;
-  // }
 }
