@@ -46,11 +46,12 @@ export class AuthService {
             name:'admin',
             login:'admin',
             password:'admin'}
-        //if(!user) throw new RequestError('Error in ADMIN: can not create ADMIN', 401)
+        // if(!user) throw new RequestError('Error in ADMIN: can not create ADMIN', 401)
  await this.usersService.create(adminDTO)
+ return true
 
-    } else {
+    } 
       return 'Hello World!-2.0';
-    }
+    
   }
 }
