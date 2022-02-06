@@ -9,7 +9,6 @@ import { UsersService } from '../users/users.service';
 
 @Injectable()
 export class FileService {
-  constructor() {}
 
   uploadByFastify(req: FastifyRequest,res: FastifyReply){
 return req
@@ -21,7 +20,7 @@ return req
 
   download(filename: string){
 console.log(filename)
-return
+
   }
  
 }

@@ -14,6 +14,7 @@ export class AppController {
   getHello(): string {
     return this.appService.getHello();
   }
+
   createAdmin(){
     return this.authService.createAdmin()
   }
