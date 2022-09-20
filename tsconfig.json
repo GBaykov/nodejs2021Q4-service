@@ -1,0 +1,31 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "declaration": true,
+    "removeComments": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "allowSyntheticDefaultImports": true,
+    "target": "es2020", 
+    "sourceMap": true,
+    "outDir": "./dist",                              /* Redirect output structure to the directory. */
+    "rootDir": "./src",
+    "baseUrl": "./",
+    "strict": true,                                 /* Enable all strict type-checking options. */
+    "noImplicitAny": true,  
+    "incremental": true,
+    "skipLibCheck": true,
+    "strictNullChecks": false,
+    "strictPropertyInitialization": false,  
+    "moduleResolution": "node",  
+    "typeRoots": [
+      "node_modules/@types",
+      "node_modules/express-body",
+      "src/typings"
+    ], 
+    "esModuleInterop": true,    
+    "forceConsistentCasingInFileNames": true, 
+    "strictBindCallApply": false,
+    "noFallthroughCasesInSwitch": false
+  }
+}
